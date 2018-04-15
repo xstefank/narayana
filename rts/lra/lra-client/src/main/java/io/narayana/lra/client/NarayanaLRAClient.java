@@ -71,6 +71,7 @@ import io.narayana.lra.annotation.Leave;
 import io.narayana.lra.annotation.Status;
 import io.narayana.lra.annotation.TimeLimit;
 import io.narayana.lra.logging.LRALogger;
+import org.xstefank.lra.definition.rest.RESTLra;
 
 /**
  * A utility class for controlling the lifecycle of Long Running Actions (LRAs) but the prefered mechanism is to use
@@ -86,6 +87,7 @@ public class NarayanaLRAClient implements LRAClient, Closeable {
 
     public static final String CORRDINATOR_HOST_PROP = "lra.http.host";
     public static final String CORRDINATOR_PORT_PROP = "lra.http.port";
+
 
     public static final String COMPLETE = "complete";
     public static final String COMPENSATE = "compensate";
@@ -381,6 +383,46 @@ public class NarayanaLRAClient implements LRAClient, Closeable {
         // isActiveLRA(lra);
 
         return lra;
+    }
+
+    public void startLRA(RESTLra lraDefinition) throws GenericLRAException {
+        Response response = null;
+        URL lra;
+
+        lraTracef("startLRA for client %s with parent %s", lraDefinition.getClientId(), lraDefinition.getParentLRA());
+
+        try {
+            String encodedParentLRA = lraDefinition.getParentLRA() == null ? "" : URLEncoder.encode(lraDefinition.getParentLRA(), "UTF-8");
+
+            aquireConnection();
+
+            response = getTarget().path("definition")
+                    .request()
+                    .post(Entity.json(lraDefinition));
+
+            // validate the HTTP status code says an LRAInfo resource was created
+            if(!isExpectedResponseStatus(response, Response.Status.CREATED)) {
+                LRALogger.i18NLogger.error_lraCreationUnexpectedStatus(response.getStatus(), response);
+                throw new GenericLRAException(INTERNAL_SERVER_ERROR.getStatusCode(),
+                        "LRA start returned an unexpected status code: " + response.getStatus());
+            }
+
+
+        } catch (UnsupportedEncodingException e) {
+            LRALogger.i18NLogger.error_cannotCreateUrlFromLCoordinatorResponse(response, e);
+            throw new GenericLRAException(INTERNAL_SERVER_ERROR.getStatusCode(), e.getMessage(), e);
+        } catch (Exception e) {
+            LRALogger.i18NLogger.error_cannotContactLRACoordinator(base, e);
+
+            if (e.getCause() != null && ConnectException.class.equals(e.getCause().getClass()))
+                throw new GenericLRAException(SERVICE_UNAVAILABLE.getStatusCode(),
+                        "Cannot connect to the LRA coordinator: "  + base + " (" + e.getCause().getMessage() + ")", e);
+
+            throw new GenericLRAException(Response.Status.SERVICE_UNAVAILABLE.getStatusCode(), e.getMessage(), e);
+        } finally {
+            releaseConnection(response);
+        }
+
     }
 
     @Override

@@ -55,6 +55,17 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.xstefank.lra</groupId>
+            <artifactId>lra-rest-definitions</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.xstefank.lra</groupId>
+            <artifactId>lra-executor</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.wildfly.swarm</groupId>
             <artifactId>microprofile</artifactId>
         </dependency>

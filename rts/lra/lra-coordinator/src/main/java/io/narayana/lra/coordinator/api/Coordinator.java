@@ -25,7 +25,9 @@ import io.narayana.lra.client.GenericLRAException;
 import io.narayana.lra.coordinator.domain.model.LRAStatus;
 import io.narayana.lra.coordinator.domain.model.Transaction;
 import io.narayana.lra.coordinator.domain.service.LRAService;
+import io.narayana.lra.coordinator.execution.RESTLRAExecutor;
 import io.narayana.lra.logging.LRALogger;
+import io.narayana.lra.coordinator.util.Util;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
@@ -63,11 +65,10 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import io.swagger.annotations.ApiOperation;
+import org.xstefank.lra.definition.rest.RESTLra;
 
 import static io.narayana.lra.client.NarayanaLRAClient.CLIENT_ID_PARAM_NAME;
 import static io.narayana.lra.client.NarayanaLRAClient.COORDINATOR_PATH_NAME;
@@ -231,6 +232,22 @@ public class Coordinator {
         return Response.status(Response.Status.CREATED)
                 .entity(lraId)
                 .header(LRA_HTTP_HEADER, lraId)
+                .build();
+    }
+
+    @Inject
+    private RESTLRAExecutor restlraExecutor;
+
+    @POST
+    @Path("definition")
+    @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN})
+    public Response startLRA(RESTLra lra) throws WebApplicationException {
+
+        restlraExecutor.executeLRAAsync(lra);
+
+        return Response.status(Response.Status.CREATED)
+                .entity(null)
+                .header(LRA_HTTP_HEADER, null)
                 .build();
     }
 
@@ -406,46 +423,17 @@ public class Coordinator {
             return joinLRA(toURL(lraId), timeLimit, compensatorLink, null, compensatorUrl);
 
         if (!isLink) { // interpret the content as a standard participant url
-            compensatorUrl += "/";
-
-            Map<String, String> terminateURIs = new HashMap<>();
-
             try {
-                terminateURIs.put(NarayanaLRAClient.COMPENSATE, new URL(compensatorUrl + "compensate").toExternalForm());
-                terminateURIs.put(NarayanaLRAClient.COMPLETE, new URL(compensatorUrl + "complete").toExternalForm());
-                terminateURIs.put(NarayanaLRAClient.STATUS, new URL(compensatorUrl + "status").toExternalForm());
+                compensatorUrl = Util.createLinkHeader(compensatorUrl);
             } catch (MalformedURLException e) {
                 if(LRALogger.logger.isTraceEnabled())
                     LRALogger.logger.tracef(e, "Cannot join to LRA id '%s' with body as compensator url '%s' is invalid",
                             lraId, compensatorUrl);
                 return Response.status(Response.Status.PRECONDITION_FAILED).build();
             }
-
-            // register with the coordinator
-            // put the lra id in an http header
-            StringBuilder linkHeaderValue = new StringBuilder();
-
-            terminateURIs.forEach((k, v) -> makeLink(linkHeaderValue, "", k, v)); // or use Collectors.joining(",")
-
-            compensatorUrl = linkHeaderValue.toString();
         }
 
         return joinLRA(toURL(lraId), timeLimit, null, compensatorUrl, null);
-    }
-
-
-    private static StringBuilder makeLink(StringBuilder b, String uriPrefix, String key, String value) {
-
-        if (value == null)
-            return b;
-
-        String terminationUri = uriPrefix == null ? value : String.format("%s%s", uriPrefix, value);
-        Link link =  Link.fromUri(terminationUri).rel(key).type(MediaType.TEXT_PLAIN).build();
-
-        if (b.length() != 0)
-            b.append(',');
-
-        return b.append(link);
     }
 
     private boolean isLink(String linkString) {
