@@ -156,6 +156,7 @@
         <module>lra-filters</module>
         <module>lra-annotation-checker</module>
         <module>lra-test</module>
+        <module>lra-rest-definitions</module>
     </modules>
 
     <profiles>

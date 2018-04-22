@@ -79,6 +79,8 @@ import org.eclipse.microprofile.lra.client.InvalidLRAIdException;
 import org.eclipse.microprofile.lra.client.LRAClient;
 import org.eclipse.microprofile.lra.client.LRAInfo;
 
+import io.narayana.lra.rest.RESTLra;
+
 /**
  * A utility class for controlling the lifecycle of Long Running Actions (LRAs) but the prefered mechanism is to use
  * the annotation in the {@link org.eclipse.microprofile.lra.annotation} package
@@ -113,6 +115,7 @@ public class NarayanaLRAClient implements LRAClient, Closeable {
     private static final String renewFormat = "/%s/renew";
 
     private static final String LINK_TEXT = "Link";
+    private static final String UTF_8 = "UTF-8";
 
     private URI base;
     private URI rcBase; // base uri of the recovery coordinator
@@ -272,7 +275,7 @@ public class NarayanaLRAClient implements LRAClient, Closeable {
      */
     public static String encodeURL(URL lraId, String errorMessage) {
         try {
-            return URLEncoder.encode(lraId.toString(), "UTF-8");
+            return URLEncoder.encode(lraId.toString(), UTF_8);
         } catch (UnsupportedEncodingException e) {
             LRALogger.i18NLogger.error_invalidFormatToEncodeUrl(lraId, e);
             throw new GenericLRAException(lraId, BAD_REQUEST.getStatusCode(), errorMessage, e);
@@ -370,7 +373,7 @@ public class NarayanaLRAClient implements LRAClient, Closeable {
         lraTracef("startLRA for client %s with parent %s", clientID, parentLRA);
 
         try {
-            String encodedParentLRA = parentLRA == null ? "" : URLEncoder.encode(parentLRA.toString(), "UTF-8");
+            String encodedParentLRA = parentLRA == null ? "" : URLEncoder.encode(parentLRA.toString(), UTF_8);
 
             aquireConnection();
 
@@ -396,7 +399,7 @@ public class NarayanaLRAClient implements LRAClient, Closeable {
                 throw new GenericLRAException(null, INTERNAL_SERVER_ERROR.getStatusCode(), "LRA creation is null", null);
             }
 
-            lra = new URL(URLDecoder.decode(lraObject.toString(), "UTF-8"));
+            lra = new URL(URLDecoder.decode(lraObject.toString(), UTF_8));
 
             lraTrace(lra, "startLRA returned");
 
@@ -422,6 +425,47 @@ public class NarayanaLRAClient implements LRAClient, Closeable {
         // isActiveLRA(lra);
 
         return lra;
+    }
+
+    public void startLRA(RESTLra lraDefinition) throws GenericLRAException {
+        Response response = null;
+        URL lra;
+
+        lraTracef("startLRA for client %s with parent %s", lraDefinition.getClientId(), lraDefinition.getParentLRA());
+
+        try {
+            String encodedParentLRA = lraDefinition.getParentLRA() == null ? "" : URLEncoder.encode(lraDefinition.getParentLRA(), UTF_8);
+
+            aquireConnection();
+
+            response = getTarget().path("definition")
+                    .request()
+                    .post(Entity.json(lraDefinition));
+
+            // validate the HTTP status code says an LRAInfo resource was created
+            if (!isExpectedResponseStatus(response, Response.Status.CREATED)) {
+                LRALogger.i18NLogger.error_lraCreationUnexpectedStatus(response.getStatus(), response);
+                throw new GenericLRAException(null, INTERNAL_SERVER_ERROR.getStatusCode(),
+                        "LRA start returned an unexpected status code: " + response.getStatus(), null);
+            }
+
+
+        } catch (UnsupportedEncodingException e) {
+            LRALogger.i18NLogger.error_cannotCreateUrlFromLCoordinatorResponse(response, e);
+            throw new GenericLRAException(null, INTERNAL_SERVER_ERROR.getStatusCode(), e.getMessage(), e);
+        } catch (Exception e) {
+            LRALogger.i18NLogger.error_cannotContactLRACoordinator(base, e);
+
+            if (e.getCause() != null && ConnectException.class.equals(e.getCause().getClass())) {
+                throw new GenericLRAException(null, SERVICE_UNAVAILABLE.getStatusCode(),
+                        "Cannot connect to the LRA coordinator: " + base + " (" + e.getCause().getMessage() + ")", e);
+            }
+
+            throw new GenericLRAException(null, Response.Status.SERVICE_UNAVAILABLE.getStatusCode(), e.getMessage(), e);
+        } finally {
+            releaseConnection(response);
+        }
+
     }
 
     @Override

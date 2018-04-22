@@ -27,7 +27,10 @@ import io.narayana.lra.client.NarayanaLRAClient;
 import io.narayana.lra.coordinator.domain.model.LRAStatus;
 import io.narayana.lra.coordinator.domain.model.Transaction;
 import io.narayana.lra.coordinator.domain.service.LRAService;
+import io.narayana.lra.coordinator.execution.RESTLRAExecutor;
+import io.narayana.lra.coordinator.util.Util;
 import io.narayana.lra.logging.LRALogger;
+import io.narayana.lra.rest.RESTLra;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -62,9 +65,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.microprofile.lra.annotation.CompensatorStatus;
 import org.eclipse.microprofile.lra.client.GenericLRAException;
@@ -240,6 +241,30 @@ public class Coordinator {
                 .build();
     }
 
+    @Inject
+    private RESTLRAExecutor restLraExecutor;
+
+    @POST
+    @Path("definition")
+    @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN})
+    public Response startLRA(RESTLra lra) throws WebApplicationException {
+
+        coordinatorUri = context.getBaseUri().toString();
+        restLraExecutor.executeLRAAsync(lra);
+
+        return Response.status(Response.Status.CREATED)
+                .entity(null)
+                .header(LRA_HTTP_HEADER, null)
+                .build();
+    }
+
+    // required as UriInfo injection is not working in CDI classes
+    private static String coordinatorUri;
+
+    public static String getCoordinatorUri() {
+        return coordinatorUri;
+    }
+
     @PUT
     @Path("{LraId}/renew")
     @ApiOperation(value = "Update the TimeLimit for an existing LRA",
@@ -397,14 +422,8 @@ public class Coordinator {
         }
 
         if (!isLink) { // interpret the content as a standard participant url
-            compensatorData += "/";
-
-            Map<String, String> terminateURIs = new HashMap<>();
-
             try {
-                terminateURIs.put(NarayanaLRAClient.COMPENSATE, new URL(compensatorData + "compensate").toExternalForm());
-                terminateURIs.put(NarayanaLRAClient.COMPLETE, new URL(compensatorData + "complete").toExternalForm());
-                terminateURIs.put(NarayanaLRAClient.STATUS, new URL(compensatorData + "status").toExternalForm());
+                compensatorData = Util.createLinkHeader(compensatorData);
             } catch (MalformedURLException e) {
                 if (LRALogger.logger.isTraceEnabled()) {
                     LRALogger.logger.tracef(e, "Cannot join to LRA id '%s' with body as compensator url '%s' is invalid",
@@ -413,34 +432,9 @@ public class Coordinator {
 
                 return Response.status(Response.Status.PRECONDITION_FAILED).build();
             }
-
-            // register with the coordinator
-            // put the lra id in an http header
-            StringBuilder linkHeaderValue = new StringBuilder();
-
-            terminateURIs.forEach((k, v) -> makeLink(linkHeaderValue, "", k, v)); // or use Collectors.joining(",")
-
-            compensatorData = linkHeaderValue.toString();
         }
 
         return joinLRA(toURL(lraId), timeLimit, null, compensatorData, null);
-    }
-
-
-    private static StringBuilder makeLink(StringBuilder b, String uriPrefix, String key, String value) {
-
-        if (value == null) {
-            return b;
-        }
-
-        String terminationUri = uriPrefix == null ? value : String.format("%s%s", uriPrefix, value);
-        Link link =  Link.fromUri(terminationUri).rel(key).type(MediaType.TEXT_PLAIN).build();
-
-        if (b.length() != 0) {
-            b.append(',');
-        }
-
-        return b.append(link);
     }
 
     private boolean isLink(String linkString) {

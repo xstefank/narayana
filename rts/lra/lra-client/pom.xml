@@ -37,6 +37,11 @@
             <version>${version.microprofile.lra}</version>
         </dependency>
         <dependency>
+            <groupId>org.jboss.narayana.rts</groupId>
+            <artifactId>lra-rest-definitions</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.jboss.spec.javax.json</groupId>
             <artifactId>jboss-json-api_1.0_spec</artifactId>
             <version>1.0.0.Final</version>
