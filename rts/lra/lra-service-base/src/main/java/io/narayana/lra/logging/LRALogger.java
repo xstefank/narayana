@@ -19,18 +19,14 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package io.narayana.lra.filter;
+package io.narayana.lra.logging;
 
-import io.narayana.lra.Current;
+import org.jboss.logging.Logger;
 
-import javax.ws.rs.client.ClientRequestContext;
-import javax.ws.rs.client.ClientRequestFilter;
-import java.io.IOException;
-
-public class ClientLRARequestFilter implements ClientRequestFilter {
-    @Override
-    public void filter(ClientRequestContext context) throws IOException {
-        // NB the following overrides what the caller did with the LRA context header
-        Current.updateLRAContext(context);
+public final class LRALogger {
+    private LRALogger() {
     }
+
+    public static final Logger logger = Logger.getLogger("io.narayana.lra");
+    public static final lraI18NLogger i18NLogger = Logger.getMessageLogger(lraI18NLogger.class, "io.narayana.lra");
 }

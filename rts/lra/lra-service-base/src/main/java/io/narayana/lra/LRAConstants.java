@@ -1,6 +1,6 @@
 /*
  * JBoss, Home of Professional Open Source.
- * Copyright 2017, Red Hat, Inc., and individual contributors
+ * Copyright 2019, Red Hat, Inc., and individual contributors
  * as indicated by the @author tags. See the copyright.txt file in the
  * distribution for a full listing of individual contributors.
  *
@@ -19,15 +19,20 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
+package io.narayana.lra;
 
-package io.narayana.lra.logging;
+public abstract class LRAConstants {
+    public static final String COORDINATOR_PATH_NAME = "lra-coordinator";
+    public static final String RECOVERY_COORDINATOR_PATH_NAME = "lra-recovery-coordinator";
 
-import org.jboss.logging.Logger;
+    public static final String COMPLETE = "complete";
+    public static final String COMPENSATE = "compensate";
+    public static final String STATUS = "status";
+    public static final String LEAVE = "leave";
+    public static final String FORGET = "forget";
 
-public final class LRALogger {
-    private LRALogger() {
-    }
-
-    public static final Logger logger = Logger.getLogger("io.narayana.lra");
-    public static final lraI18NLogger i18NLogger = Logger.getMessageLogger(lraI18NLogger.class, "io.narayana.lra");
+    public static final String STATUS_PARAM_NAME = "Status";
+    public static final String CLIENT_ID_PARAM_NAME = "ClientID";
+    public static final String TIMELIMIT_PARAM_NAME = "TimeLimit";
+    public static final String PARENT_LRA_PARAM_NAME = "ParentLRA";
 }

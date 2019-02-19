@@ -30,7 +30,6 @@ import com.arjuna.ats.arjuna.coordinator.BasicAction;
 import com.arjuna.ats.arjuna.coordinator.RecordList;
 import com.arjuna.ats.arjuna.coordinator.RecordListIterator;
 import com.arjuna.ats.arjuna.coordinator.RecordType;
-import io.narayana.lra.client.LRAInfoImpl;
 import io.narayana.lra.logging.LRALogger;
 import com.arjuna.ats.arjuna.state.InputObjectState;
 import com.arjuna.ats.arjuna.state.OutputObjectState;
@@ -39,7 +38,6 @@ import com.arjuna.ats.internal.arjuna.thread.ThreadActionData;
 import io.narayana.lra.coordinator.domain.service.LRAService;
 import org.eclipse.microprofile.lra.annotation.CompensatorStatus;
 import org.eclipse.microprofile.lra.client.InvalidLRAIdException;
-import org.eclipse.microprofile.lra.client.LRAInfo;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -104,8 +102,8 @@ public class Transaction extends AtomicAction {
         this.scheduler = Executors.newScheduledThreadPool(1);
     }
 
-    public LRAInfo getLRAInfo() {
-        return new LRAInfoImpl(id.toExternalForm(), clientId, status == null ? "" : status.name(),
+    public LRAData getLRAData() {
+        return new LRAData(id.toExternalForm(), clientId, status == null ? "" : status.name(),
                 isComplete(), isCompensated(), isRecovering(),
                 isActive(), isTopLevel(),
                 startTime.toInstant(ZoneOffset.UTC).toEpochMilli(),

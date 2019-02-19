@@ -22,7 +22,6 @@
 package io.narayana.lra.coordinator.domain.model;
 
 import org.eclipse.microprofile.lra.annotation.CompensatorStatus;
-import org.eclipse.microprofile.lra.client.LRAInfo;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -54,15 +53,15 @@ public class LRAStatus {
     private CompensatorStatus status;
 
     public LRAStatus(Transaction lra) {
-        LRAInfo info = lra.getLRAInfo();
+        LRAData data = lra.getLRAData();
 
-        this.lraId = info.getLraId();
-        this.clientId = info.getClientId();
-        this.isComplete = info.isComplete();
-        this.isCompensated = info.isCompensated();
-        this.isRecovering = info.isRecovering();
-        this.isActive = info.isActive();
-        this.isTopLevel = info.isTopLevel();
+        this.lraId = data.getLraId();
+        this.clientId = data.getClientId();
+        this.isComplete = data.isComplete();
+        this.isCompensated = data.isCompensated();
+        this.isRecovering = data.isRecovering();
+        this.isActive = data.isActive();
+        this.isTopLevel = data.isTopLevel();
         this.httpStatus = lra.getHttpStatus();
         this.responseData = lra.getResponseData();
         this.status = lra.getLRAStatus();

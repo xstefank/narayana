@@ -21,6 +21,7 @@
  */
 package io.narayana.lra.coordinator.api;
 
+import io.narayana.lra.LRAConstants;
 import io.narayana.lra.coordinator.domain.model.LRAStatus;
 import io.narayana.lra.coordinator.domain.service.LRAService;
 import io.narayana.lra.logging.LRALogger;
@@ -31,7 +32,6 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.eclipse.microprofile.lra.client.GenericLRAException;
 import org.jboss.logging.Logger;
-import io.narayana.lra.client.NarayanaLRAClient;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -50,8 +50,8 @@ import java.net.URL;
 import java.util.List;
 
 @ApplicationScoped
-@Path(NarayanaLRAClient.RECOVERY_COORDINATOR_PATH_NAME)
-@Api(value = NarayanaLRAClient.RECOVERY_COORDINATOR_PATH_NAME, tags = "LRA Recovery")
+@Path(LRAConstants.RECOVERY_COORDINATOR_PATH_NAME)
+@Api(value = LRAConstants.RECOVERY_COORDINATOR_PATH_NAME, tags = "LRA Recovery")
 public class RecoveryCoordinator {
 
     private final Logger logger = Logger.getLogger(RecoveryCoordinator.class.getName());
