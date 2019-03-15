@@ -414,6 +414,8 @@ public class ServerLRAFilter implements ContainerRequestFilter, ContainerRespons
                         Response.Status.ACCEPTED.getStatusCode(),
                         Response.Status.OK.getStatusCode());
             }
+        } catch (NotFoundException e) {
+            LRALogger.logger.warn(e);
         } finally {
             if (suspendedLRA != null) {
                 Current.push((URL) suspendedLRA);
