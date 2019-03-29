@@ -1,0 +1,599 @@
+2019-03-29 08:08:29,063 set-fi lra-coordinator-runner.jar[5682] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffff0a28050f:a495:5c99ee0f:9 has 1 heuristic participant(s)!
+2019-03-29 08:08:29,068 set-fi lra-coordinator-runner.jar[5682] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffff0a28050f:a495:5c99ee0f:9 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@6a4f787b
+2019-03-29 08:08:29,175 set-fi lra-coordinator-runner.jar[5682] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 08:08:29,279 set-fi lra-coordinator-runner.jar[5682] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 08:08:29,413 set-fi lra-coordinator-runner.jar[5682] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 08:08:29,427 set-fi lra-coordinator-runner.jar[5682] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 08:08:29,482 set-fi lra-coordinator-runner.jar[5682] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 08:08:29,529 set-fi lra-coordinator-runner.jar[5682] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.890s. Listening on: http://0.0.0.0:8080
+2019-03-29 08:08:29,530 set-fi lra-coordinator-runner.jar[5682] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 08:08:47,767 set-fi lra-coordinator-runner.jar[5682] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 41937 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 08:08:50,461 set-fi lra-coordinator-runner.jar[5682] INFO  [io.quarkus] (main) Quarkus stopped in 0.004s
+2019-03-29 08:10:01,487 set-fi lra-coordinator-runner.jar[6526] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffff0a28050f:a495:5c99ee0f:9 has 1 heuristic participant(s)!
+2019-03-29 08:10:01,489 set-fi lra-coordinator-runner.jar[6526] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffff0a28050f:a495:5c99ee0f:9 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@6a4f787b
+2019-03-29 08:10:01,583 set-fi lra-coordinator-runner.jar[6526] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 08:10:01,686 set-fi lra-coordinator-runner.jar[6526] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 08:10:01,814 set-fi lra-coordinator-runner.jar[6526] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 08:10:01,825 set-fi lra-coordinator-runner.jar[6526] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 08:10:01,870 set-fi lra-coordinator-runner.jar[6526] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 08:10:01,915 set-fi lra-coordinator-runner.jar[6526] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.943s. Listening on: http://0.0.0.0:8080
+2019-03-29 08:10:01,915 set-fi lra-coordinator-runner.jar[6526] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 08:10:17,134 set-fi lra-coordinator-runner.jar[6526] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 34065 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 08:10:19,735 set-fi lra-coordinator-runner.jar[6526] INFO  [io.quarkus] (main) Quarkus stopped in 0.004s
+2019-03-29 08:18:59,483 set-fi lra-coordinator-runner.jar[7927] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffff0a28050f:a495:5c99ee0f:9 has 1 heuristic participant(s)!
+2019-03-29 08:18:59,485 set-fi lra-coordinator-runner.jar[7927] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffff0a28050f:a495:5c99ee0f:9 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@6a4f787b
+2019-03-29 08:18:59,571 set-fi lra-coordinator-runner.jar[7927] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 08:18:59,672 set-fi lra-coordinator-runner.jar[7927] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 08:18:59,790 set-fi lra-coordinator-runner.jar[7927] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 08:18:59,802 set-fi lra-coordinator-runner.jar[7927] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 08:18:59,850 set-fi lra-coordinator-runner.jar[7927] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 08:18:59,893 set-fi lra-coordinator-runner.jar[7927] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.900s. Listening on: http://0.0.0.0:8080
+2019-03-29 08:18:59,894 set-fi lra-coordinator-runner.jar[7927] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 08:19:15,297 set-fi lra-coordinator-runner.jar[7927] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 32857 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 08:19:15,851 set-fi lra-coordinator-runner.jar[7927] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:ae75:5c9dc6e3:4 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 08:19:25,882 set-fi lra-coordinator-runner.jar[7927] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffff0a28050f:a495:5c99ee0f:9 has 1 heuristic participant(s)!
+2019-03-29 08:19:25,882 set-fi lra-coordinator-runner.jar[7927] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffff0a28050f:a495:5c99ee0f:9 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@2ffefeb0
+2019-03-29 08:19:25,942 set-fi lra-coordinator-runner.jar[7927] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:ae75:5c9dc6e3:4 has 1 heuristic participant(s)!
+2019-03-29 08:19:25,942 set-fi lra-coordinator-runner.jar[7927] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:ae75:5c9dc6e3:4 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@277e0e5b
+2019-03-29 08:19:27,804 set-fi lra-coordinator-runner.jar[7927] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:ae75:5c9dc6e3:5b received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 08:19:37,827 set-fi lra-coordinator-runner.jar[7927] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:ae75:5c9dc6e3:5b has 1 heuristic participant(s)!
+2019-03-29 08:19:37,828 set-fi lra-coordinator-runner.jar[7927] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:ae75:5c9dc6e3:5b restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@54fef88e
+2019-03-29 08:19:38,851 set-fi lra-coordinator-runner.jar[7927] INFO  [io.quarkus] (main) Quarkus stopped in 0.004s
+2019-03-29 09:29:04,356 set-fi lra-coordinator-runner.jar[12068] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 09:29:04,455 set-fi lra-coordinator-runner.jar[12068] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 09:29:04,571 set-fi lra-coordinator-runner.jar[12068] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 09:29:04,583 set-fi lra-coordinator-runner.jar[12068] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 09:29:04,634 set-fi lra-coordinator-runner.jar[12068] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 09:29:04,680 set-fi lra-coordinator-runner.jar[12068] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.767s. Listening on: http://0.0.0.0:8080
+2019-03-29 09:29:04,680 set-fi lra-coordinator-runner.jar[12068] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 09:29:20,595 set-fi lra-coordinator-runner.jar[12068] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 34035 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 09:29:21,155 set-fi lra-coordinator-runner.jar[12068] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:b2ef:5c9dd750:3 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 09:29:31,181 set-fi lra-coordinator-runner.jar[12068] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:b2ef:5c9dd750:3 has 1 heuristic participant(s)!
+2019-03-29 09:29:31,184 set-fi lra-coordinator-runner.jar[12068] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:b2ef:5c9dd750:3 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@5c72d009
+2019-03-29 09:29:33,273 set-fi lra-coordinator-runner.jar[12068] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:b2ef:5c9dd750:59 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 09:29:43,296 set-fi lra-coordinator-runner.jar[12068] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:b2ef:5c9dd750:59 has 1 heuristic participant(s)!
+2019-03-29 09:29:43,297 set-fi lra-coordinator-runner.jar[12068] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:b2ef:5c9dd750:59 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@2d7c2bc
+2019-03-29 09:29:54,216 set-fi lra-coordinator-runner.jar[12068] INFO  [io.quarkus] (main) Quarkus stopped in 0.004s
+2019-03-29 09:31:33,326 set-fi lra-coordinator-runner.jar[13785] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 09:31:33,429 set-fi lra-coordinator-runner.jar[13785] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 09:31:33,556 set-fi lra-coordinator-runner.jar[13785] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 09:31:33,568 set-fi lra-coordinator-runner.jar[13785] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 09:31:33,623 set-fi lra-coordinator-runner.jar[13785] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 09:31:33,670 set-fi lra-coordinator-runner.jar[13785] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.844s. Listening on: http://0.0.0.0:8080
+2019-03-29 09:31:33,671 set-fi lra-coordinator-runner.jar[13785] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 09:31:48,825 set-fi lra-coordinator-runner.jar[13785] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 41733 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 09:31:50,193 set-fi lra-coordinator-runner.jar[13785] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:8b71:5c9dd7e5:d received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 09:32:00,206 set-fi lra-coordinator-runner.jar[13785] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8b71:5c9dd7e5:d has 1 heuristic participant(s)!
+2019-03-29 09:32:00,207 set-fi lra-coordinator-runner.jar[13785] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8b71:5c9dd7e5:d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@2a2f0a4b
+2019-03-29 09:32:02,555 set-fi lra-coordinator-runner.jar[13785] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:8b71:5c9dd7e5:6d received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 09:32:12,576 set-fi lra-coordinator-runner.jar[13785] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8b71:5c9dd7e5:6d has 1 heuristic participant(s)!
+2019-03-29 09:32:12,577 set-fi lra-coordinator-runner.jar[13785] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8b71:5c9dd7e5:6d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@4c8811fb
+2019-03-29 09:32:24,423 set-fi lra-coordinator-runner.jar[13785] INFO  [io.quarkus] (main) Quarkus stopped in 0.004s
+2019-03-29 09:34:03,218 set-fi lra-coordinator-runner.jar[14983] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 09:34:03,331 set-fi lra-coordinator-runner.jar[14983] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 09:34:03,453 set-fi lra-coordinator-runner.jar[14983] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 09:34:03,466 set-fi lra-coordinator-runner.jar[14983] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 09:34:03,517 set-fi lra-coordinator-runner.jar[14983] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 09:34:03,572 set-fi lra-coordinator-runner.jar[14983] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.805s. Listening on: http://0.0.0.0:8080
+2019-03-29 09:34:03,572 set-fi lra-coordinator-runner.jar[14983] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 09:34:25,033 set-fi lra-coordinator-runner.jar[14983] INFO  [io.quarkus] (main) Quarkus stopped in 0.010s
+2019-03-29 09:35:51,652 set-fi lra-coordinator-runner.jar[15904] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 09:35:51,757 set-fi lra-coordinator-runner.jar[15904] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 09:35:51,901 set-fi lra-coordinator-runner.jar[15904] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 09:35:51,913 set-fi lra-coordinator-runner.jar[15904] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 09:35:51,966 set-fi lra-coordinator-runner.jar[15904] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 09:35:52,023 set-fi lra-coordinator-runner.jar[15904] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.926s. Listening on: http://0.0.0.0:8080
+2019-03-29 09:35:52,023 set-fi lra-coordinator-runner.jar[15904] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 09:36:32,226 set-fi lra-coordinator-runner.jar[15904] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 37139 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 09:36:32,926 set-fi lra-coordinator-runner.jar[15904] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:916d:5c9dd8e7:d received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 09:36:42,939 set-fi lra-coordinator-runner.jar[15904] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:916d:5c9dd8e7:d has 1 heuristic participant(s)!
+2019-03-29 09:36:42,941 set-fi lra-coordinator-runner.jar[15904] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:916d:5c9dd8e7:d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@5eb20cdb
+2019-03-29 09:38:53,913 set-fi lra-coordinator-runner.jar[15904] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:916d:5c9dd8e7:6e received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 09:39:03,925 set-fi lra-coordinator-runner.jar[15904] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:916d:5c9dd8e7:6e has 1 heuristic participant(s)!
+2019-03-29 09:39:03,926 set-fi lra-coordinator-runner.jar[15904] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:916d:5c9dd8e7:6e restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@4dc773fa
+2019-03-29 09:39:05,004 set-fi lra-coordinator-runner.jar[15904] INFO  [io.quarkus] (main) Quarkus stopped in 0.005s
+2019-03-29 09:39:59,906 set-fi lra-coordinator-runner.jar[16906] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 09:40:00,043 set-fi lra-coordinator-runner.jar[16906] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 09:40:00,201 set-fi lra-coordinator-runner.jar[16906] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 09:40:00,221 set-fi lra-coordinator-runner.jar[16906] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 09:40:00,296 set-fi lra-coordinator-runner.jar[16906] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 09:40:00,361 set-fi lra-coordinator-runner.jar[16906] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.126s. Listening on: http://0.0.0.0:8080
+2019-03-29 09:40:00,362 set-fi lra-coordinator-runner.jar[16906] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 09:40:26,004 set-fi lra-coordinator-runner.jar[16906] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 45693 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 09:40:30,715 set-fi lra-coordinator-runner.jar[16906] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:8c3b:5c9dd9df:d received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 09:40:40,730 set-fi lra-coordinator-runner.jar[16906] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8c3b:5c9dd9df:d has 1 heuristic participant(s)!
+2019-03-29 09:40:40,733 set-fi lra-coordinator-runner.jar[16906] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8c3b:5c9dd9df:d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@557e7acd
+2019-03-29 09:40:56,047 set-fi lra-coordinator-runner.jar[16906] INFO  [io.quarkus] (main) Quarkus stopped in 0.016s
+2019-03-29 09:41:11,218 set-fi lra-coordinator-runner.jar[17655] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 09:41:11,359 set-fi lra-coordinator-runner.jar[17655] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 09:41:11,520 set-fi lra-coordinator-runner.jar[17655] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 09:41:11,538 set-fi lra-coordinator-runner.jar[17655] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 09:41:11,612 set-fi lra-coordinator-runner.jar[17655] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 09:41:11,667 set-fi lra-coordinator-runner.jar[17655] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.991s. Listening on: http://0.0.0.0:8080
+2019-03-29 09:41:11,667 set-fi lra-coordinator-runner.jar[17655] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 09:41:28,976 set-fi lra-coordinator-runner.jar[17655] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 46801 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 09:41:30,752 set-fi lra-coordinator-runner.jar[17655] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:a8eb:5c9dda27:d received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 09:41:40,779 set-fi lra-coordinator-runner.jar[17655] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a8eb:5c9dda27:d has 1 heuristic participant(s)!
+2019-03-29 09:41:40,782 set-fi lra-coordinator-runner.jar[17655] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a8eb:5c9dda27:d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@3d50af21
+2019-03-29 09:42:35,007 set-fi lra-coordinator-runner.jar[17655] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:a8eb:5c9dda27:6d received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 09:42:45,029 set-fi lra-coordinator-runner.jar[17655] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a8eb:5c9dda27:6d has 1 heuristic participant(s)!
+2019-03-29 09:42:45,030 set-fi lra-coordinator-runner.jar[17655] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a8eb:5c9dda27:6d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@55d2e338
+2019-03-29 09:42:45,048 set-fi lra-coordinator-runner.jar[17655] INFO  [io.nar.lra] (XNIO-1 task-1) failed to recover Transaction 0:ffffc0a80067:a8eb:5c9dda27:6d: java.lang.RuntimeException: RESTEASY003940: Unable to instantiate MessageBodyReader
+2019-03-29 09:42:45,075 set-fi lra-coordinator-runner.jar[17655] INFO  [io.quarkus] (main) Quarkus stopped in 8.556s
+2019-03-29 09:43:10,372 set-fi lra-coordinator-runner.jar[18550] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:a8eb:5c9dda27:6d has 1 heuristic participant(s)!
+2019-03-29 09:43:10,375 set-fi lra-coordinator-runner.jar[18550] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:a8eb:5c9dda27:6d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@1ea9f6af
+2019-03-29 09:43:10,485 set-fi lra-coordinator-runner.jar[18550] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 09:43:10,635 set-fi lra-coordinator-runner.jar[18550] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 09:43:10,821 set-fi lra-coordinator-runner.jar[18550] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 09:43:10,836 set-fi lra-coordinator-runner.jar[18550] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 09:43:10,895 set-fi lra-coordinator-runner.jar[18550] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 09:43:10,965 set-fi lra-coordinator-runner.jar[18550] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.083s. Listening on: http://0.0.0.0:8080
+2019-03-29 09:43:10,965 set-fi lra-coordinator-runner.jar[18550] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 09:43:30,222 set-fi lra-coordinator-runner.jar[18550] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 38647 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 09:43:32,391 set-fi lra-coordinator-runner.jar[18550] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:8dd5:5c9dda9e:e received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 09:43:42,409 set-fi lra-coordinator-runner.jar[18550] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a8eb:5c9dda27:6d has 1 heuristic participant(s)!
+2019-03-29 09:43:42,409 set-fi lra-coordinator-runner.jar[18550] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a8eb:5c9dda27:6d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@6608ce21
+2019-03-29 09:43:42,471 set-fi lra-coordinator-runner.jar[18550] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8dd5:5c9dda9e:e has 1 heuristic participant(s)!
+2019-03-29 09:43:42,471 set-fi lra-coordinator-runner.jar[18550] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8dd5:5c9dda9e:e restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@6b22e7e8
+2019-03-29 09:44:42,073 set-fi lra-coordinator-runner.jar[18550] INFO  [io.quarkus] (main) Quarkus stopped in 0.017s
+2019-03-29 09:45:10,297 set-fi lra-coordinator-runner.jar[19351] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 09:45:10,404 set-fi lra-coordinator-runner.jar[19351] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 09:45:10,527 set-fi lra-coordinator-runner.jar[19351] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 09:45:10,537 set-fi lra-coordinator-runner.jar[19351] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 09:45:10,588 set-fi lra-coordinator-runner.jar[19351] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 09:45:10,641 set-fi lra-coordinator-runner.jar[19351] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.782s. Listening on: http://0.0.0.0:8080
+2019-03-29 09:45:10,642 set-fi lra-coordinator-runner.jar[19351] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 09:45:13,088 set-fi lra-coordinator-runner.jar[19351] INFO  [io.quarkus] (main) Quarkus stopped in 0.006s
+2019-03-29 09:48:16,971 set-fi lra-coordinator-runner.jar[19807] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 09:48:17,081 set-fi lra-coordinator-runner.jar[19807] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 09:48:17,204 set-fi lra-coordinator-runner.jar[19807] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 09:48:17,217 set-fi lra-coordinator-runner.jar[19807] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 09:48:17,272 set-fi lra-coordinator-runner.jar[19807] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 09:48:17,319 set-fi lra-coordinator-runner.jar[19807] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.766s. Listening on: http://0.0.0.0:8080
+2019-03-29 09:48:17,319 set-fi lra-coordinator-runner.jar[19807] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 09:48:37,270 set-fi lra-coordinator-runner.jar[19807] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 38331 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 09:48:37,933 set-fi lra-coordinator-runner.jar[19807] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:a9ff:5c9ddbd0:d received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 09:48:47,946 set-fi lra-coordinator-runner.jar[19807] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:d has 1 heuristic participant(s)!
+2019-03-29 09:48:47,949 set-fi lra-coordinator-runner.jar[19807] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@5eb20cdb
+2019-03-29 09:50:40,981 set-fi lra-coordinator-runner.jar[19807] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:a9ff:5c9ddbd0:6b received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 09:50:50,992 set-fi lra-coordinator-runner.jar[19807] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:6b has 1 heuristic participant(s)!
+2019-03-29 09:50:50,993 set-fi lra-coordinator-runner.jar[19807] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:6b restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@26d192f3
+2019-03-29 09:50:51,006 set-fi lra-coordinator-runner.jar[19807] INFO  [io.nar.lra] (XNIO-1 task-1) failed to recover Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:6b: java.lang.RuntimeException: RESTEASY003940: Unable to instantiate MessageBodyReader
+2019-03-29 09:50:51,033 set-fi lra-coordinator-runner.jar[19807] INFO  [io.quarkus] (main) Quarkus stopped in 2.409s
+2019-03-29 10:14:43,620 set-fi lra-coordinator-runner.jar[22062] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:6b has 1 heuristic participant(s)!
+2019-03-29 10:14:43,622 set-fi lra-coordinator-runner.jar[22062] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:6b restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@1ea9f6af
+2019-03-29 10:14:43,733 set-fi lra-coordinator-runner.jar[22062] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 10:14:43,877 set-fi lra-coordinator-runner.jar[22062] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 10:14:44,054 set-fi lra-coordinator-runner.jar[22062] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 10:14:44,080 set-fi lra-coordinator-runner.jar[22062] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 10:14:44,151 set-fi lra-coordinator-runner.jar[22062] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 10:14:44,210 set-fi lra-coordinator-runner.jar[22062] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.342s. Listening on: http://0.0.0.0:8080
+2019-03-29 10:14:44,211 set-fi lra-coordinator-runner.jar[22062] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 10:14:44,804 set-fi lra-coordinator-runner.jar[22062] INFO  [io.quarkus] (main) Quarkus stopped in 0.010s
+2019-03-29 10:20:38,249 set-fi lra-coordinator-runner.jar[23152] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:6b has 1 heuristic participant(s)!
+2019-03-29 10:20:38,251 set-fi lra-coordinator-runner.jar[23152] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:6b restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@1ea9f6af
+2019-03-29 10:20:38,368 set-fi lra-coordinator-runner.jar[23152] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 10:20:38,509 set-fi lra-coordinator-runner.jar[23152] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 10:20:38,665 set-fi lra-coordinator-runner.jar[23152] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 10:20:38,683 set-fi lra-coordinator-runner.jar[23152] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 10:20:38,753 set-fi lra-coordinator-runner.jar[23152] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 10:20:38,807 set-fi lra-coordinator-runner.jar[23152] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.989s. Listening on: http://0.0.0.0:8080
+2019-03-29 10:20:38,808 set-fi lra-coordinator-runner.jar[23152] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 10:20:59,896 set-fi lra-coordinator-runner.jar[23152] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 37933 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 10:21:05,357 set-fi lra-coordinator-runner.jar[23152] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:a4c9:5c9de366:e received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 10:21:15,372 set-fi lra-coordinator-runner.jar[23152] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:6b has 1 heuristic participant(s)!
+2019-03-29 10:21:15,373 set-fi lra-coordinator-runner.jar[23152] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:6b restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@2dd98293
+2019-03-29 10:21:19,051 set-fi lra-coordinator-runner.jar[23152] INFO  [io.nar.lra] (XNIO-1 task-1) LRARecord.doEnd put http://localhost:8180/lracontroller/compensate failed: null
+2019-03-29 10:21:19,066 set-fi lra-coordinator-runner.jar[23152] INFO  [io.nar.lra] (XNIO-1 task-1) RecoveringLRA.replayPhase2 for http://localhost:8080/lra-coordinator/0_ffffc0a80067_a9ff_5c9ddbd0_6b ended with status: Cancelling
+2019-03-29 10:21:19,068 set-fi lra-coordinator-runner.jar[23152] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a4c9:5c9de366:e has 1 heuristic participant(s)!
+2019-03-29 10:21:19,069 set-fi lra-coordinator-runner.jar[23152] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a4c9:5c9de366:e restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@159f3241
+2019-03-29 10:21:21,582 set-fi lra-coordinator-runner.jar[23152] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:a4c9:5c9de366:6f received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 10:21:31,598 set-fi lra-coordinator-runner.jar[23152] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:6b has 1 heuristic participant(s)!
+2019-03-29 10:21:31,599 set-fi lra-coordinator-runner.jar[23152] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:6b restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@2c1312c0
+2019-03-29 10:21:45,146 set-fi lra-coordinator-runner.jar[23152] INFO  [io.nar.lra] (XNIO-1 task-1) LRARecord.doEnd put http://localhost:8180/lracontroller/compensate failed: null
+2019-03-29 10:21:45,169 set-fi lra-coordinator-runner.jar[23152] INFO  [io.nar.lra] (XNIO-1 task-1) RecoveringLRA.replayPhase2 for http://localhost:8080/lra-coordinator/0_ffffc0a80067_a9ff_5c9ddbd0_6b ended with status: Cancelling
+2019-03-29 10:21:45,171 set-fi lra-coordinator-runner.jar[23152] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a4c9:5c9de366:6f has 1 heuristic participant(s)!
+2019-03-29 10:21:45,172 set-fi lra-coordinator-runner.jar[23152] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a4c9:5c9de366:6f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@5e629b9a
+2019-03-29 10:21:56,040 set-fi lra-coordinator-runner.jar[23152] INFO  [io.quarkus] (main) Quarkus stopped in 0.005s
+2019-03-29 10:22:23,653 set-fi lra-coordinator-runner.jar[24038] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:6b has 1 heuristic participant(s)!
+2019-03-29 10:22:23,654 set-fi lra-coordinator-runner.jar[24038] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:6b restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@27efef64
+2019-03-29 10:22:23,736 set-fi lra-coordinator-runner.jar[24038] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 10:22:23,850 set-fi lra-coordinator-runner.jar[24038] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 10:22:23,990 set-fi lra-coordinator-runner.jar[24038] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 10:22:24,009 set-fi lra-coordinator-runner.jar[24038] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 10:22:24,057 set-fi lra-coordinator-runner.jar[24038] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 10:22:24,107 set-fi lra-coordinator-runner.jar[24038] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.796s. Listening on: http://0.0.0.0:8080
+2019-03-29 10:22:24,107 set-fi lra-coordinator-runner.jar[24038] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 10:22:38,323 set-fi lra-coordinator-runner.jar[24038] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 33847 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 10:22:39,015 set-fi lra-coordinator-runner.jar[24038] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:a623:5c9de3cf:e received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 10:22:49,029 set-fi lra-coordinator-runner.jar[24038] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:6b has 1 heuristic participant(s)!
+2019-03-29 10:22:49,029 set-fi lra-coordinator-runner.jar[24038] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a9ff:5c9ddbd0:6b restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@61096220
+2019-03-29 10:22:49,078 set-fi lra-coordinator-runner.jar[24038] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a623:5c9de3cf:e has 1 heuristic participant(s)!
+2019-03-29 10:22:49,078 set-fi lra-coordinator-runner.jar[24038] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a623:5c9de3cf:e restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@1d57dd2
+2019-03-29 10:22:51,516 set-fi lra-coordinator-runner.jar[24038] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:a623:5c9de3cf:6f received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 10:23:01,541 set-fi lra-coordinator-runner.jar[24038] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a623:5c9de3cf:6f has 1 heuristic participant(s)!
+2019-03-29 10:23:01,542 set-fi lra-coordinator-runner.jar[24038] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a623:5c9de3cf:6f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@487ca4a
+2019-03-29 10:23:02,691 set-fi lra-coordinator-runner.jar[24038] INFO  [io.quarkus] (main) Quarkus stopped in 0.004s
+2019-03-29 10:24:16,233 set-fi lra-coordinator-runner.jar[25056] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 10:24:16,342 set-fi lra-coordinator-runner.jar[25056] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 10:24:16,468 set-fi lra-coordinator-runner.jar[25056] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 10:24:16,480 set-fi lra-coordinator-runner.jar[25056] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 10:24:16,532 set-fi lra-coordinator-runner.jar[25056] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 10:24:16,584 set-fi lra-coordinator-runner.jar[25056] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.907s. Listening on: http://0.0.0.0:8080
+2019-03-29 10:24:16,585 set-fi lra-coordinator-runner.jar[25056] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 10:24:31,863 set-fi lra-coordinator-runner.jar[25056] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 45875 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 10:24:32,585 set-fi lra-coordinator-runner.jar[25056] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:93a3:5c9de440:d received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 10:24:42,610 set-fi lra-coordinator-runner.jar[25056] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:93a3:5c9de440:d has 1 heuristic participant(s)!
+2019-03-29 10:24:42,613 set-fi lra-coordinator-runner.jar[25056] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:93a3:5c9de440:d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@5eb20cdb
+2019-03-29 10:24:44,928 set-fi lra-coordinator-runner.jar[25056] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:93a3:5c9de440:6d received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 10:24:54,939 set-fi lra-coordinator-runner.jar[25056] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:93a3:5c9de440:6d has 1 heuristic participant(s)!
+2019-03-29 10:24:54,939 set-fi lra-coordinator-runner.jar[25056] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:93a3:5c9de440:6d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@4dc773fa
+2019-03-29 10:24:55,960 set-fi lra-coordinator-runner.jar[25056] INFO  [io.quarkus] (main) Quarkus stopped in 0.004s
+2019-03-29 10:34:48,146 set-fi lra-coordinator-runner.jar[26749] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 10:34:48,277 set-fi lra-coordinator-runner.jar[26749] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 10:34:48,434 set-fi lra-coordinator-runner.jar[26749] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 10:34:48,455 set-fi lra-coordinator-runner.jar[26749] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 10:34:48,524 set-fi lra-coordinator-runner.jar[26749] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 10:34:48,585 set-fi lra-coordinator-runner.jar[26749] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.985s. Listening on: http://0.0.0.0:8080
+2019-03-29 10:34:48,585 set-fi lra-coordinator-runner.jar[26749] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 10:35:12,100 set-fi lra-coordinator-runner.jar[26749] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 33705 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 10:35:15,688 set-fi lra-coordinator-runner.jar[26749] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:a56d:5c9de6b7:d received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 10:35:25,723 set-fi lra-coordinator-runner.jar[26749] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a56d:5c9de6b7:d has 1 heuristic participant(s)!
+2019-03-29 10:35:25,725 set-fi lra-coordinator-runner.jar[26749] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a56d:5c9de6b7:d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@42ff1cb4
+2019-03-29 10:38:59,506 set-fi lra-coordinator-runner.jar[26749] INFO  [io.quarkus] (main) Quarkus stopped in 0.013s
+2019-03-29 11:42:26,166 set-fi lra-coordinator-runner.jar[12335] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 11:42:26,350 set-fi lra-coordinator-runner.jar[12335] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 11:42:26,613 set-fi lra-coordinator-runner.jar[12335] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 11:42:26,639 set-fi lra-coordinator-runner.jar[12335] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 11:42:26,730 set-fi lra-coordinator-runner.jar[12335] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 11:42:26,819 set-fi lra-coordinator-runner.jar[12335] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.251s. Listening on: http://0.0.0.0:8080
+2019-03-29 11:42:26,821 set-fi lra-coordinator-runner.jar[12335] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 11:42:44,346 set-fi lra-coordinator-runner.jar[12335] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 33795 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 11:42:44,944 set-fi lra-coordinator-runner.jar[12335] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:8931:5c9df691:3 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 11:42:54,978 set-fi lra-coordinator-runner.jar[12335] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8931:5c9df691:3 has 1 heuristic participant(s)!
+2019-03-29 11:42:54,981 set-fi lra-coordinator-runner.jar[12335] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8931:5c9df691:3 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@3e163efa
+2019-03-29 11:42:57,051 set-fi lra-coordinator-runner.jar[12335] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:8931:5c9df691:59 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 11:43:07,061 set-fi lra-coordinator-runner.jar[12335] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8931:5c9df691:59 has 1 heuristic participant(s)!
+2019-03-29 11:43:07,063 set-fi lra-coordinator-runner.jar[12335] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8931:5c9df691:59 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@3259ff37
+2019-03-29 11:43:08,128 set-fi lra-coordinator-runner.jar[12335] INFO  [io.quarkus] (main) Quarkus stopped in 0.032s
+2019-03-29 11:43:40,887 set-fi lra-coordinator-runner.jar[14803] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 11:43:41,111 set-fi lra-coordinator-runner.jar[14803] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 11:43:41,348 set-fi lra-coordinator-runner.jar[14803] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 11:43:41,372 set-fi lra-coordinator-runner.jar[14803] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 11:43:41,443 set-fi lra-coordinator-runner.jar[14803] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 11:43:41,500 set-fi lra-coordinator-runner.jar[14803] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.330s. Listening on: http://0.0.0.0:8080
+2019-03-29 11:43:41,501 set-fi lra-coordinator-runner.jar[14803] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 11:43:58,144 set-fi lra-coordinator-runner.jar[14803] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 46661 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 11:43:58,966 set-fi lra-coordinator-runner.jar[14803] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:abb3:5c9df6dc:4 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 11:44:08,990 set-fi lra-coordinator-runner.jar[14803] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:abb3:5c9df6dc:4 has 1 heuristic participant(s)!
+2019-03-29 11:44:08,993 set-fi lra-coordinator-runner.jar[14803] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:abb3:5c9df6dc:4 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@725d61c9
+2019-03-29 11:44:46,786 set-fi lra-coordinator-runner.jar[14803] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:abb3:5c9df6dc:5a received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 11:44:56,814 set-fi lra-coordinator-runner.jar[14803] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:abb3:5c9df6dc:5a has 1 heuristic participant(s)!
+2019-03-29 11:44:56,815 set-fi lra-coordinator-runner.jar[14803] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:abb3:5c9df6dc:5a restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@63897c4
+2019-03-29 11:44:57,876 set-fi lra-coordinator-runner.jar[14803] INFO  [io.quarkus] (main) Quarkus stopped in 0.006s
+2019-03-29 11:47:52,328 set-fi lra-coordinator-runner.jar[15994] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 11:47:52,460 set-fi lra-coordinator-runner.jar[15994] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 11:47:52,617 set-fi lra-coordinator-runner.jar[15994] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 11:47:52,635 set-fi lra-coordinator-runner.jar[15994] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 11:47:52,696 set-fi lra-coordinator-runner.jar[15994] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 11:47:52,753 set-fi lra-coordinator-runner.jar[15994] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.470s. Listening on: http://0.0.0.0:8080
+2019-03-29 11:47:52,753 set-fi lra-coordinator-runner.jar[15994] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 11:48:09,279 set-fi lra-coordinator-runner.jar[15994] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 41537 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 11:48:13,164 set-fi lra-coordinator-runner.jar[15994] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:a08b:5c9df7d8:3 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 11:48:23,196 set-fi lra-coordinator-runner.jar[15994] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a08b:5c9df7d8:3 has 1 heuristic participant(s)!
+2019-03-29 11:48:23,199 set-fi lra-coordinator-runner.jar[15994] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a08b:5c9df7d8:3 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@12badab8
+2019-03-29 11:52:22,058 set-fi lra-coordinator-runner.jar[15994] INFO  [io.quarkus] (main) Quarkus stopped in 0.006s
+2019-03-29 11:55:03,403 set-fi lra-coordinator-runner.jar[17284] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 11:55:03,609 set-fi lra-coordinator-runner.jar[17284] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 11:55:03,800 set-fi lra-coordinator-runner.jar[17284] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 11:55:03,818 set-fi lra-coordinator-runner.jar[17284] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 11:55:03,881 set-fi lra-coordinator-runner.jar[17284] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 11:55:03,933 set-fi lra-coordinator-runner.jar[17284] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.352s. Listening on: http://0.0.0.0:8080
+2019-03-29 11:55:03,934 set-fi lra-coordinator-runner.jar[17284] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 11:55:20,210 set-fi lra-coordinator-runner.jar[17284] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 41299 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 11:55:21,674 set-fi lra-coordinator-runner.jar[17284] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:b341:5c9df987:3 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 11:55:31,697 set-fi lra-coordinator-runner.jar[17284] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:b341:5c9df987:3 has 1 heuristic participant(s)!
+2019-03-29 11:55:31,700 set-fi lra-coordinator-runner.jar[17284] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:b341:5c9df987:3 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@3a66dece
+2019-03-29 11:56:47,490 set-fi lra-coordinator-runner.jar[17284] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:b341:5c9df987:59 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 11:56:57,508 set-fi lra-coordinator-runner.jar[17284] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:b341:5c9df987:59 has 1 heuristic participant(s)!
+2019-03-29 11:56:57,508 set-fi lra-coordinator-runner.jar[17284] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:b341:5c9df987:59 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@18bf0860
+2019-03-29 11:56:58,588 set-fi lra-coordinator-runner.jar[17284] INFO  [io.quarkus] (main) Quarkus stopped in 0.005s
+2019-03-29 12:07:08,258 set-fi lra-coordinator-runner.jar[19395] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 12:07:08,434 set-fi lra-coordinator-runner.jar[19395] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 12:07:08,687 set-fi lra-coordinator-runner.jar[19395] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 12:07:08,714 set-fi lra-coordinator-runner.jar[19395] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 12:07:08,776 set-fi lra-coordinator-runner.jar[19395] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 12:07:08,835 set-fi lra-coordinator-runner.jar[19395] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.196s. Listening on: http://0.0.0.0:8080
+2019-03-29 12:07:08,836 set-fi lra-coordinator-runner.jar[19395] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 12:07:24,737 set-fi lra-coordinator-runner.jar[19395] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 36433 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 12:07:27,008 set-fi lra-coordinator-runner.jar[19395] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:8059:5c9dfc5c:4 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 12:07:37,038 set-fi lra-coordinator-runner.jar[19395] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8059:5c9dfc5c:4 has 1 heuristic participant(s)!
+2019-03-29 12:07:37,041 set-fi lra-coordinator-runner.jar[19395] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8059:5c9dfc5c:4 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@3a66dece
+2019-03-29 12:10:41,295 set-fi lra-coordinator-runner.jar[19395] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:8059:5c9dfc5c:5b received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 12:10:51,315 set-fi lra-coordinator-runner.jar[19395] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8059:5c9dfc5c:5b has 1 heuristic participant(s)!
+2019-03-29 12:10:51,316 set-fi lra-coordinator-runner.jar[19395] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8059:5c9dfc5c:5b restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@36a2a79f
+2019-03-29 12:10:52,351 set-fi lra-coordinator-runner.jar[19395] INFO  [io.quarkus] (main) Quarkus stopped in 0.006s
+2019-03-29 12:11:25,695 set-fi lra-coordinator-runner.jar[20681] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 12:11:25,834 set-fi lra-coordinator-runner.jar[20681] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 12:11:26,009 set-fi lra-coordinator-runner.jar[20681] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 12:11:26,026 set-fi lra-coordinator-runner.jar[20681] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 12:11:26,093 set-fi lra-coordinator-runner.jar[20681] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 12:11:26,151 set-fi lra-coordinator-runner.jar[20681] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.016s. Listening on: http://0.0.0.0:8080
+2019-03-29 12:11:26,152 set-fi lra-coordinator-runner.jar[20681] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 12:11:47,735 set-fi lra-coordinator-runner.jar[20681] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 46491 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 12:11:48,764 set-fi lra-coordinator-runner.jar[20681] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:a62d:5c9dfd5d:3 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 12:11:58,801 set-fi lra-coordinator-runner.jar[20681] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a62d:5c9dfd5d:3 has 1 heuristic participant(s)!
+2019-03-29 12:11:58,804 set-fi lra-coordinator-runner.jar[20681] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a62d:5c9dfd5d:3 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@620b3e74
+2019-03-29 12:15:59,310 set-fi lra-coordinator-runner.jar[20681] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:a62d:5c9dfd5d:5a received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 12:16:09,336 set-fi lra-coordinator-runner.jar[20681] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a62d:5c9dfd5d:5a has 1 heuristic participant(s)!
+2019-03-29 12:16:09,337 set-fi lra-coordinator-runner.jar[20681] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:a62d:5c9dfd5d:5a restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@7cf41be0
+2019-03-29 12:16:10,388 set-fi lra-coordinator-runner.jar[20681] INFO  [io.quarkus] (main) Quarkus stopped in 0.005s
+2019-03-29 15:02:06,837 set-fi lra-coordinator-runner.jar[471] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 15:02:06,967 set-fi lra-coordinator-runner.jar[471] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 15:02:07,142 set-fi lra-coordinator-runner.jar[471] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 15:02:07,159 set-fi lra-coordinator-runner.jar[471] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 15:02:07,226 set-fi lra-coordinator-runner.jar[471] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 15:02:07,284 set-fi lra-coordinator-runner.jar[471] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.009s. Listening on: http://0.0.0.0:8080
+2019-03-29 15:02:07,284 set-fi lra-coordinator-runner.jar[471] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 15:02:25,187 set-fi lra-coordinator-runner.jar[471] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 39335 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 15:02:26,591 set-fi lra-coordinator-runner.jar[471] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:b50d:5c9e255e:3 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 15:02:36,625 set-fi lra-coordinator-runner.jar[471] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:b50d:5c9e255e:3 has 1 heuristic participant(s)!
+2019-03-29 15:02:36,628 set-fi lra-coordinator-runner.jar[471] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:b50d:5c9e255e:3 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@7d550e22
+2019-03-29 15:06:44,689 set-fi lra-coordinator-runner.jar[471] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:b50d:5c9e255e:5a received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 15:06:54,702 set-fi lra-coordinator-runner.jar[471] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:b50d:5c9e255e:5a has 1 heuristic participant(s)!
+2019-03-29 15:06:54,704 set-fi lra-coordinator-runner.jar[471] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:b50d:5c9e255e:5a restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@67396b7a
+2019-03-29 15:06:54,723 set-fi lra-coordinator-runner.jar[471] INFO  [io.nar.lra] (XNIO-1 task-1) failed to recover Transaction 0:ffffc0a80067:b50d:5c9e255e:5a: java.lang.RuntimeException: RESTEASY003940: Unable to instantiate MessageBodyReader
+2019-03-29 15:06:54,765 set-fi lra-coordinator-runner.jar[471] INFO  [io.quarkus] (main) Quarkus stopped in 9.572s
+2019-03-29 15:18:47,380 set-fi lra-coordinator-runner.jar[11030] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:b50d:5c9e255e:5a has 1 heuristic participant(s)!
+2019-03-29 15:18:47,667 set-fi lra-coordinator-runner.jar[11030] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:b50d:5c9e255e:5a restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@59662a0b
+2019-03-29 15:18:47,819 set-fi lra-coordinator-runner.jar[11030] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 15:18:48,013 set-fi lra-coordinator-runner.jar[11030] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 15:18:48,315 set-fi lra-coordinator-runner.jar[11030] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 15:18:48,349 set-fi lra-coordinator-runner.jar[11030] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 15:18:48,448 set-fi lra-coordinator-runner.jar[11030] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 15:18:48,543 set-fi lra-coordinator-runner.jar[11030] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.662s. Listening on: http://0.0.0.0:8080
+2019-03-29 15:18:48,543 set-fi lra-coordinator-runner.jar[11030] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 15:19:11,432 set-fi lra-coordinator-runner.jar[11030] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 37549 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 15:19:13,907 set-fi lra-coordinator-runner.jar[11030] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:8323:5c9e2947:4 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 15:19:23,934 set-fi lra-coordinator-runner.jar[11030] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:b50d:5c9e255e:5a has 1 heuristic participant(s)!
+2019-03-29 15:19:23,936 set-fi lra-coordinator-runner.jar[11030] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:b50d:5c9e255e:5a restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@40c47651
+2019-03-29 15:19:39,908 set-fi lra-coordinator-runner.jar[11030] INFO  [io.nar.lra] (XNIO-1 task-1) LRARecord.doEnd put http://localhost:8180/lracontroller/compensate failed: null
+2019-03-29 15:19:39,921 set-fi lra-coordinator-runner.jar[11030] INFO  [io.nar.lra] (XNIO-1 task-1) RecoveringLRA.replayPhase2 for http://localhost:8080/lra-coordinator/0_ffffc0a80067_b50d_5c9e255e_5a ended with status: Cancelling
+2019-03-29 15:19:39,924 set-fi lra-coordinator-runner.jar[11030] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:4 has 1 heuristic participant(s)!
+2019-03-29 15:19:39,926 set-fi lra-coordinator-runner.jar[11030] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:4 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@64dc015e
+2019-03-29 15:21:22,502 set-fi lra-coordinator-runner.jar[11030] ERROR [org.jbo.res.res.i18n] (XNIO-1 task-2) RESTEASY002010: Failed to execute: javax.ws.rs.NotAllowedException: RESTEASY003650: No resource method found for GET, return 405 with Allow header
+	at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:467)
+	at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:152)
+	at org.jboss.resteasy.core.registry.RootNode.match(RootNode.java:43)
+	at org.jboss.resteasy.core.registry.RootClassNode.match(RootClassNode.java:47)
+	at org.jboss.resteasy.core.ResourceMethodRegistry.getResourceInvoker(ResourceMethodRegistry.java:450)
+	at org.jboss.resteasy.core.SynchronousDispatcher.getInvoker(SynchronousDispatcher.java:323)
+	at org.jboss.resteasy.core.SynchronousDispatcher.lambda$invoke$4(SynchronousDispatcher.java:244)
+	at org.jboss.resteasy.core.SynchronousDispatcher.lambda$preprocess$0(SynchronousDispatcher.java:153)
+	at org.jboss.resteasy.core.interception.jaxrs.PreMatchContainerRequestContext.filter(PreMatchContainerRequestContext.java:362)
+	at org.jboss.resteasy.core.SynchronousDispatcher.preprocess(SynchronousDispatcher.java:156)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:238)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:229)
+	at io.quarkus.resteasy.runtime.ResteasyFilter$ResteasyResponseWrapper.sendError(ResteasyFilter.java:72)
+	at io.undertow.servlet.handlers.DefaultServlet.doGet(DefaultServlet.java:175)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:686)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:791)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at io.quarkus.resteasy.runtime.ResteasyFilter.doFilter(ResteasyFilter.java:43)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.quarkus.undertow.runtime.UndertowDeploymentTemplate$7$1$1.call(UndertowDeploymentTemplate.java:415)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:364)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1998)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1525)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1416)
+	at java.lang.Thread.run(Thread.java:748)
+
+2019-03-29 15:21:24,262 set-fi lra-coordinator-runner.jar[11030] WARN  [com.arj.ats.arjuna] (XNIO-1 task-2) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:8323:5c9e2947:5b received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 15:21:26,226 set-fi lra-coordinator-runner.jar[11030] ERROR [org.jbo.res.res.i18n] (XNIO-1 task-1) RESTEASY002010: Failed to execute: javax.ws.rs.NotAllowedException: RESTEASY003650: No resource method found for GET, return 405 with Allow header
+	at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:467)
+	at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:152)
+	at org.jboss.resteasy.core.registry.RootNode.match(RootNode.java:43)
+	at org.jboss.resteasy.core.registry.RootClassNode.match(RootClassNode.java:47)
+	at org.jboss.resteasy.core.ResourceMethodRegistry.getResourceInvoker(ResourceMethodRegistry.java:450)
+	at org.jboss.resteasy.core.SynchronousDispatcher.getInvoker(SynchronousDispatcher.java:323)
+	at org.jboss.resteasy.core.SynchronousDispatcher.lambda$invoke$4(SynchronousDispatcher.java:244)
+	at org.jboss.resteasy.core.SynchronousDispatcher.lambda$preprocess$0(SynchronousDispatcher.java:153)
+	at org.jboss.resteasy.core.interception.jaxrs.PreMatchContainerRequestContext.filter(PreMatchContainerRequestContext.java:362)
+	at org.jboss.resteasy.core.SynchronousDispatcher.preprocess(SynchronousDispatcher.java:156)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:238)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:229)
+	at io.quarkus.resteasy.runtime.ResteasyFilter$ResteasyResponseWrapper.sendError(ResteasyFilter.java:72)
+	at io.undertow.servlet.handlers.DefaultServlet.doGet(DefaultServlet.java:175)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:686)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:791)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at io.quarkus.resteasy.runtime.ResteasyFilter.doFilter(ResteasyFilter.java:43)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.quarkus.undertow.runtime.UndertowDeploymentTemplate$7$1$1.call(UndertowDeploymentTemplate.java:415)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:364)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1998)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1525)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1416)
+	at java.lang.Thread.run(Thread.java:748)
+
+2019-03-29 15:21:34,288 set-fi lra-coordinator-runner.jar[11030] WARN  [com.arj.ats.arjuna] (XNIO-1 task-2) Transaction 0:ffffc0a80067:b50d:5c9e255e:5a has 1 heuristic participant(s)!
+2019-03-29 15:21:34,289 set-fi lra-coordinator-runner.jar[11030] WARN  [com.arj.ats.arjuna] (XNIO-1 task-2) Transaction 0:ffffc0a80067:b50d:5c9e255e:5a restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@595121f8
+2019-03-29 15:21:34,346 set-fi lra-coordinator-runner.jar[11030] WARN  [com.arj.ats.arjuna] (XNIO-1 task-2) Transaction 0:ffffc0a80067:8323:5c9e2947:5b has 1 heuristic participant(s)!
+2019-03-29 15:21:34,346 set-fi lra-coordinator-runner.jar[11030] WARN  [com.arj.ats.arjuna] (XNIO-1 task-2) Transaction 0:ffffc0a80067:8323:5c9e2947:5b restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@58f35683
+2019-03-29 15:21:35,383 set-fi lra-coordinator-runner.jar[11030] INFO  [io.nar.lra] (XNIO-1 task-2) LRARecord.doEnd put http://localhost:8180/lracontroller/compensate failed: javax.ws.rs.ProcessingException: RESTEASY004655: Unable to invoke request
+2019-03-29 15:21:35,383 set-fi lra-coordinator-runner.jar[11030] WARN  [com.arj.ats.arjuna] (XNIO-1 task-2) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:8323:5c9e2947:f received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 15:21:35,397 set-fi lra-coordinator-runner.jar[11030] INFO  [io.quarkus] (main) Quarkus stopped in 0.005s
+2019-03-29 15:25:58,521 set-fi lra-coordinator-runner.jar[12611] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:8323:5c9e2947:f has 1 heuristic participant(s)!
+2019-03-29 15:25:58,528 set-fi lra-coordinator-runner.jar[12611] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:8323:5c9e2947:f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@59662a0b
+2019-03-29 15:25:58,675 set-fi lra-coordinator-runner.jar[12611] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 15:25:58,889 set-fi lra-coordinator-runner.jar[12611] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 15:25:59,135 set-fi lra-coordinator-runner.jar[12611] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 15:25:59,161 set-fi lra-coordinator-runner.jar[12611] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 15:25:59,249 set-fi lra-coordinator-runner.jar[12611] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 15:25:59,322 set-fi lra-coordinator-runner.jar[12611] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.435s. Listening on: http://0.0.0.0:8080
+2019-03-29 15:25:59,323 set-fi lra-coordinator-runner.jar[12611] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 15:26:16,114 set-fi lra-coordinator-runner.jar[12611] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 32815 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 15:26:17,140 set-fi lra-coordinator-runner.jar[12611] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:974d:5c9e2af6:4 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 15:26:27,261 set-fi lra-coordinator-runner.jar[12611] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:f has 1 heuristic participant(s)!
+2019-03-29 15:26:27,262 set-fi lra-coordinator-runner.jar[12611] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@40c47651
+2019-03-29 15:26:27,263 set-fi lra-coordinator-runner.jar[12611] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:974d:5c9e2af6:4 has 1 heuristic participant(s)!
+2019-03-29 15:26:27,264 set-fi lra-coordinator-runner.jar[12611] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:974d:5c9e2af6:4 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@541f0bd2
+2019-03-29 15:28:48,477 set-fi lra-coordinator-runner.jar[12611] WARN  [com.arj.ats.arjuna] (Periodic Recovery) Transaction 0:ffffc0a80067:8323:5c9e2947:f has 1 heuristic participant(s)!
+2019-03-29 15:28:48,479 set-fi lra-coordinator-runner.jar[12611] WARN  [com.arj.ats.arjuna] (Periodic Recovery) Transaction 0:ffffc0a80067:8323:5c9e2947:f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@5a27a367
+2019-03-29 15:29:00,106 set-fi lra-coordinator-runner.jar[12611] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:974d:5c9e2af6:5d received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 15:29:10,123 set-fi lra-coordinator-runner.jar[12611] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:f has 1 heuristic participant(s)!
+2019-03-29 15:29:10,124 set-fi lra-coordinator-runner.jar[12611] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@4aad4a25
+2019-03-29 15:29:10,125 set-fi lra-coordinator-runner.jar[12611] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:974d:5c9e2af6:5d has 1 heuristic participant(s)!
+2019-03-29 15:29:10,126 set-fi lra-coordinator-runner.jar[12611] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:974d:5c9e2af6:5d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@4761a697
+2019-03-29 15:29:10,136 set-fi lra-coordinator-runner.jar[12611] INFO  [io.nar.lra] (XNIO-1 task-1) failed to recover Transaction 0:ffffc0a80067:974d:5c9e2af6:5d: java.lang.RuntimeException: RESTEASY003940: Unable to instantiate MessageBodyReader
+2019-03-29 15:29:10,151 set-fi lra-coordinator-runner.jar[12611] INFO  [io.quarkus] (main) Quarkus stopped in 4.408s
+2019-03-29 15:32:40,391 set-fi lra-coordinator-runner.jar[15645] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:8323:5c9e2947:f has 1 heuristic participant(s)!
+2019-03-29 15:32:40,394 set-fi lra-coordinator-runner.jar[15645] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:8323:5c9e2947:f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@59662a0b
+2019-03-29 15:32:40,397 set-fi lra-coordinator-runner.jar[15645] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:974d:5c9e2af6:5d has 1 heuristic participant(s)!
+2019-03-29 15:32:40,398 set-fi lra-coordinator-runner.jar[15645] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:974d:5c9e2af6:5d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@6cf0e0ba
+2019-03-29 15:32:40,524 set-fi lra-coordinator-runner.jar[15645] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 15:32:40,709 set-fi lra-coordinator-runner.jar[15645] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 15:32:40,949 set-fi lra-coordinator-runner.jar[15645] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 15:32:40,972 set-fi lra-coordinator-runner.jar[15645] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 15:32:41,048 set-fi lra-coordinator-runner.jar[15645] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 15:32:41,113 set-fi lra-coordinator-runner.jar[15645] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.170s. Listening on: http://0.0.0.0:8080
+2019-03-29 15:32:41,114 set-fi lra-coordinator-runner.jar[15645] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 15:32:57,387 set-fi lra-coordinator-runner.jar[15645] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 41073 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 15:32:57,898 set-fi lra-coordinator-runner.jar[15645] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:8611:5c9e2c88:5 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 15:33:07,920 set-fi lra-coordinator-runner.jar[15645] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:f has 1 heuristic participant(s)!
+2019-03-29 15:33:07,921 set-fi lra-coordinator-runner.jar[15645] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@584756eb
+2019-03-29 15:33:07,923 set-fi lra-coordinator-runner.jar[15645] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8611:5c9e2c88:5 has 1 heuristic participant(s)!
+2019-03-29 15:33:07,924 set-fi lra-coordinator-runner.jar[15645] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8611:5c9e2c88:5 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@3ca4da4f
+2019-03-29 15:33:07,985 set-fi lra-coordinator-runner.jar[15645] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:974d:5c9e2af6:5d has 1 heuristic participant(s)!
+2019-03-29 15:33:07,985 set-fi lra-coordinator-runner.jar[15645] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:974d:5c9e2af6:5d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@26bde5a6
+2019-03-29 15:33:10,265 set-fi lra-coordinator-runner.jar[15645] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:8611:5c9e2c88:5d received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 15:33:20,276 set-fi lra-coordinator-runner.jar[15645] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8611:5c9e2c88:5d has 1 heuristic participant(s)!
+2019-03-29 15:33:20,277 set-fi lra-coordinator-runner.jar[15645] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8611:5c9e2c88:5d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@7a87d864
+2019-03-29 15:33:20,316 set-fi lra-coordinator-runner.jar[15645] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:f has 1 heuristic participant(s)!
+2019-03-29 15:33:20,316 set-fi lra-coordinator-runner.jar[15645] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@16dd29e7
+2019-03-29 15:33:21,343 set-fi lra-coordinator-runner.jar[15645] INFO  [io.quarkus] (main) Quarkus stopped in 0.004s
+2019-03-29 15:37:46,148 set-fi lra-coordinator-runner.jar[17341] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:8323:5c9e2947:f has 1 heuristic participant(s)!
+2019-03-29 15:37:46,152 set-fi lra-coordinator-runner.jar[17341] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:8323:5c9e2947:f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@59662a0b
+2019-03-29 15:37:46,277 set-fi lra-coordinator-runner.jar[17341] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 15:37:46,450 set-fi lra-coordinator-runner.jar[17341] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 15:37:46,672 set-fi lra-coordinator-runner.jar[17341] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 15:37:46,691 set-fi lra-coordinator-runner.jar[17341] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 15:37:46,754 set-fi lra-coordinator-runner.jar[17341] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 15:37:46,809 set-fi lra-coordinator-runner.jar[17341] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.120s. Listening on: http://0.0.0.0:8080
+2019-03-29 15:37:46,810 set-fi lra-coordinator-runner.jar[17341] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 15:38:15,096 set-fi lra-coordinator-runner.jar[17341] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 41815 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 15:38:16,068 set-fi lra-coordinator-runner.jar[17341] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:8947:5c9e2dba:4 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 15:38:27,450 set-fi lra-coordinator-runner.jar[17341] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8947:5c9e2dba:4 has 1 heuristic participant(s)!
+2019-03-29 15:38:27,451 set-fi lra-coordinator-runner.jar[17341] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8947:5c9e2dba:4 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@1ca019ad
+2019-03-29 15:38:27,497 set-fi lra-coordinator-runner.jar[17341] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:f has 1 heuristic participant(s)!
+2019-03-29 15:38:27,498 set-fi lra-coordinator-runner.jar[17341] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@548fcf5e
+2019-03-29 15:39:21,694 set-fi lra-coordinator-runner.jar[17341] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:8947:5c9e2dba:5b received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 15:39:31,717 set-fi lra-coordinator-runner.jar[17341] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8947:5c9e2dba:5b has 1 heuristic participant(s)!
+2019-03-29 15:39:31,718 set-fi lra-coordinator-runner.jar[17341] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8947:5c9e2dba:5b restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@7d18ff52
+2019-03-29 15:39:31,755 set-fi lra-coordinator-runner.jar[17341] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:f has 1 heuristic participant(s)!
+2019-03-29 15:39:31,755 set-fi lra-coordinator-runner.jar[17341] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@6968dc01
+2019-03-29 15:39:32,835 set-fi lra-coordinator-runner.jar[17341] INFO  [io.quarkus] (main) Quarkus stopped in 0.005s
+2019-03-29 15:40:32,047 set-fi lra-coordinator-runner.jar[18529] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:8323:5c9e2947:f has 1 heuristic participant(s)!
+2019-03-29 15:40:32,049 set-fi lra-coordinator-runner.jar[18529] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:8323:5c9e2947:f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@59662a0b
+2019-03-29 15:40:32,223 set-fi lra-coordinator-runner.jar[18529] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 15:40:32,432 set-fi lra-coordinator-runner.jar[18529] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 15:40:32,641 set-fi lra-coordinator-runner.jar[18529] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 15:40:32,659 set-fi lra-coordinator-runner.jar[18529] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 15:40:32,728 set-fi lra-coordinator-runner.jar[18529] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 15:40:32,780 set-fi lra-coordinator-runner.jar[18529] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.408s. Listening on: http://0.0.0.0:8080
+2019-03-29 15:40:32,781 set-fi lra-coordinator-runner.jar[18529] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 15:40:54,145 set-fi lra-coordinator-runner.jar[18529] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 40117 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 15:40:55,270 set-fi lra-coordinator-runner.jar[18529] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:988d:5c9e2e60:4 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 15:41:05,339 set-fi lra-coordinator-runner.jar[18529] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:988d:5c9e2e60:4 has 1 heuristic participant(s)!
+2019-03-29 15:41:05,346 set-fi lra-coordinator-runner.jar[18529] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:988d:5c9e2e60:4 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@542f2538
+2019-03-29 15:41:05,416 set-fi lra-coordinator-runner.jar[18529] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:f has 1 heuristic participant(s)!
+2019-03-29 15:41:05,416 set-fi lra-coordinator-runner.jar[18529] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@2df88f45
+2019-03-29 15:43:18,614 set-fi lra-coordinator-runner.jar[18529] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:988d:5c9e2e60:5c received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 15:43:19,806 set-fi lra-coordinator-runner.jar[18529] WARN  [com.arj.ats.arjuna] (Periodic Recovery) Transaction 0:ffffc0a80067:8323:5c9e2947:f has 1 heuristic participant(s)!
+2019-03-29 15:43:19,806 set-fi lra-coordinator-runner.jar[18529] WARN  [com.arj.ats.arjuna] (Periodic Recovery) Transaction 0:ffffc0a80067:8323:5c9e2947:f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@40c5cf31
+2019-03-29 15:43:20,851 set-fi lra-coordinator-runner.jar[18529] INFO  [io.quarkus] (main) Quarkus stopped in 0.005s
+2019-03-29 15:44:36,133 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:8323:5c9e2947:f has 1 heuristic participant(s)!
+2019-03-29 15:44:36,177 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:8323:5c9e2947:f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@59662a0b
+2019-03-29 15:44:36,181 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:988d:5c9e2e60:5c has 1 heuristic participant(s)!
+2019-03-29 15:44:36,181 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (main) Transaction 0:ffffc0a80067:988d:5c9e2e60:5c restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@6cf0e0ba
+2019-03-29 15:44:36,348 set-fi lra-coordinator-runner.jar[19932] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 15:44:36,575 set-fi lra-coordinator-runner.jar[19932] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 15:44:36,894 set-fi lra-coordinator-runner.jar[19932] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 15:44:36,925 set-fi lra-coordinator-runner.jar[19932] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 15:44:37,015 set-fi lra-coordinator-runner.jar[19932] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 15:44:37,077 set-fi lra-coordinator-runner.jar[19932] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.450s. Listening on: http://0.0.0.0:8080
+2019-03-29 15:44:37,078 set-fi lra-coordinator-runner.jar[19932] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 15:44:53,846 set-fi lra-coordinator-runner.jar[19932] INFO  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012170: TransactionStatusManager started on port 36363 and host 127.0.0.1 with service com.arjuna.ats.arjuna.recovery.ActionStatusService
+2019-03-29 15:45:01,471 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) ARJUNA012084: One-phase commit of action 0:ffffc0a80067:8c0f:5c9e2f54:5 received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 15:45:11,487 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:f has 1 heuristic participant(s)!
+2019-03-29 15:45:11,488 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8323:5c9e2947:f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@b3bd9d0
+2019-03-29 15:45:11,491 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:988d:5c9e2e60:5c has 1 heuristic participant(s)!
+2019-03-29 15:45:11,492 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:988d:5c9e2e60:5c restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@d8cae93
+2019-03-29 15:45:23,704 set-fi lra-coordinator-runner.jar[19932] INFO  [io.nar.lra] (XNIO-1 task-1) LRARecord.doEnd put http://localhost:8180/lracontroller/compensate failed: null
+2019-03-29 15:45:28,593 set-fi lra-coordinator-runner.jar[19932] INFO  [io.nar.lra] (XNIO-1 task-1) RecoveringLRA.replayPhase2 for http://localhost:8080/lra-coordinator/0_ffffc0a80067_988d_5c9e2e60_5c ended with status: Cancelling
+2019-03-29 15:45:28,594 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8c0f:5c9e2f54:5 has 1 heuristic participant(s)!
+2019-03-29 15:45:28,595 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (XNIO-1 task-1) Transaction 0:ffffc0a80067:8c0f:5c9e2f54:5 restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@9238a54
+2019-03-29 15:47:06,111 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (XNIO-1 task-2) ARJUNA012089: Top-level abort of action 0:ffffc0a80067:8c0f:5c9e2f54:5d received heuristic decision: TwoPhaseOutcome.HEURISTIC_HAZARD
+2019-03-29 15:47:16,135 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (XNIO-1 task-2) Transaction 0:ffffc0a80067:8c0f:5c9e2f54:5d has 1 heuristic participant(s)!
+2019-03-29 15:47:16,136 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (XNIO-1 task-2) Transaction 0:ffffc0a80067:8c0f:5c9e2f54:5d restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@3e018d80
+2019-03-29 15:47:16,153 set-fi lra-coordinator-runner.jar[19932] INFO  [io.nar.lra] (XNIO-1 task-2) failed to recover Transaction 0:ffffc0a80067:8c0f:5c9e2f54:5d: java.lang.RuntimeException: RESTEASY003940: Unable to instantiate MessageBodyReader
+2019-03-29 15:47:16,155 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (XNIO-1 task-2) Transaction 0:ffffc0a80067:8323:5c9e2947:f has 1 heuristic participant(s)!
+2019-03-29 15:47:16,155 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (XNIO-1 task-2) Transaction 0:ffffc0a80067:8323:5c9e2947:f restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@2c0d8452
+2019-03-29 15:47:16,156 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (XNIO-1 task-2) Transaction 0:ffffc0a80067:988d:5c9e2e60:5c has 1 heuristic participant(s)!
+2019-03-29 15:47:16,157 set-fi lra-coordinator-runner.jar[19932] WARN  [com.arj.ats.arjuna] (XNIO-1 task-2) Transaction 0:ffffc0a80067:988d:5c9e2e60:5c restored heuristic participant io.narayana.lra.coordinator.domain.model.LRARecord@287f34f0
+2019-03-29 15:47:16,165 set-fi lra-coordinator-runner.jar[19932] INFO  [io.nar.lra] (XNIO-1 task-2) failed to recover Transaction 0:ffffc0a80067:988d:5c9e2e60:5c: java.lang.RuntimeException: RESTEASY003940: Unable to instantiate MessageBodyReader
+2019-03-29 15:47:16,188 set-fi lra-coordinator-runner.jar[19932] INFO  [io.quarkus] (main) Quarkus stopped in 9.628s

@@ -1,0 +1,42 @@
+2019-03-29 15:33:31,598 set-fi lra-coordinator-runner.jar[16305] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 15:33:31,702 set-fi lra-coordinator-runner.jar[16305] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 15:33:31,831 set-fi lra-coordinator-runner.jar[16305] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 15:33:31,842 set-fi lra-coordinator-runner.jar[16305] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 15:33:31,888 set-fi lra-coordinator-runner.jar[16305] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 15:33:31,931 set-fi lra-coordinator-runner.jar[16305] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 1.261s. Listening on: http://[::]:8080
+2019-03-29 15:33:31,931 set-fi lra-coordinator-runner.jar[16305] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 15:34:07,966 set-fi lra-coordinator-runner.jar[16305] INFO  [io.quarkus] (main) Quarkus stopped in 0.012s
+2019-03-29 15:34:14,672 set-fi lra-coordinator-runner.jar[16515] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 15:34:14,774 set-fi lra-coordinator-runner.jar[16515] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 15:34:14,908 set-fi lra-coordinator-runner.jar[16515] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 15:34:14,919 set-fi lra-coordinator-runner.jar[16515] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 15:34:14,966 set-fi lra-coordinator-runner.jar[16515] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 15:34:15,013 set-fi lra-coordinator-runner.jar[16515] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.745s. Listening on: http://[::]:8080
+2019-03-29 15:34:15,014 set-fi lra-coordinator-runner.jar[16515] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 15:34:15,113 set-fi lra-coordinator-runner.jar[16515] INFO  [io.quarkus] (main) Quarkus stopped in 0.021s
+2019-03-29 15:34:18,709 set-fi lra-coordinator-runner.jar[16574] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 15:34:18,822 set-fi lra-coordinator-runner.jar[16574] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 15:34:18,970 set-fi lra-coordinator-runner.jar[16574] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 15:34:18,981 set-fi lra-coordinator-runner.jar[16574] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 15:34:19,034 set-fi lra-coordinator-runner.jar[16574] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 15:34:19,082 set-fi lra-coordinator-runner.jar[16574] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.777s. Listening on: http://[::]:8080
+2019-03-29 15:34:19,082 set-fi lra-coordinator-runner.jar[16574] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 15:34:25,089 set-fi lra-coordinator-runner.jar[16574] INFO  [io.quarkus] (main) Quarkus stopped in 0.022s
+2019-03-29 15:34:42,566 set-fi lra-coordinator-runner.jar[16635] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 15:34:42,685 set-fi lra-coordinator-runner.jar[16635] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 15:34:42,824 set-fi lra-coordinator-runner.jar[16635] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 15:34:42,835 set-fi lra-coordinator-runner.jar[16635] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 15:34:42,884 set-fi lra-coordinator-runner.jar[16635] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 15:34:42,936 set-fi lra-coordinator-runner.jar[16635] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.792s. Listening on: http://[::]:8080
+2019-03-29 15:34:42,937 set-fi lra-coordinator-runner.jar[16635] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 15:35:15,478 set-fi lra-coordinator-runner.jar[16635] INFO  [io.quarkus] (main) Quarkus stopped in 0.020s
+2019-03-29 15:35:37,471 set-fi lra-coordinator-runner.jar[16839] WARN  [org.jbo.res.res.i18n] (main) RESTEASY002175: The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
+2019-03-29 15:35:37,618 set-fi lra-coordinator-runner.jar[16839] DEBUG [org.jbo.res.res.i18n] (main) RESTEASY002225: Deploying javax.ws.rs.core.Application: class io.narayana.lra.coordinator.api.JaxRsActivator
+2019-03-29 15:35:37,803 set-fi lra-coordinator-runner.jar[16839] DEBUG [org.xnio] (main) XNIO version 3.7.0.Final
+2019-03-29 15:35:37,824 set-fi lra-coordinator-runner.jar[16839] DEBUG [org.xni.nio] (main) XNIO NIO Implementation Version 3.7.0.Final
+2019-03-29 15:35:37,892 set-fi lra-coordinator-runner.jar[16839] DEBUG [org.jbo.threads] (main) JBoss Threads version 3.0.0.Alpha4
+2019-03-29 15:35:37,949 set-fi lra-coordinator-runner.jar[16839] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.997s. Listening on: http://[::]:8080
+2019-03-29 15:35:37,949 set-fi lra-coordinator-runner.jar[16839] INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jsonb]
+2019-03-29 15:36:22,963 set-fi lra-coordinator-runner.jar[16839] INFO  [io.nar.lra] (Periodic Recovery) LRARecord.doEnd put http://localhost:8180/lracontroller/complete failed: javax.ws.rs.ProcessingException: RESTEASY004655: Unable to invoke request
+2019-03-29 15:36:22,981 set-fi lra-coordinator-runner.jar[16839] INFO  [io.nar.lra] (Periodic Recovery) RecoveringLRA.replayPhase2 for http://localhost:8080/lra-coordinator/0_ffff0a28050f_8cbb_5c99cb82_6 ended with status: Cancelling
+2019-03-29 15:37:20,206 set-fi lra-coordinator-runner.jar[16839] INFO  [io.quarkus] (main) Quarkus stopped in 0.013s

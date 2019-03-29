@@ -22,22 +22,13 @@
 
 package io.narayana.lra.coordinator.api;
 
-import io.narayana.lra.Current;
 import io.narayana.lra.coordinator.domain.model.LRAData;
 import io.narayana.lra.coordinator.domain.model.LRAStatusHolder;
 import io.narayana.lra.coordinator.domain.model.Transaction;
 import io.narayana.lra.coordinator.domain.service.LRAService;
 import io.narayana.lra.logging.LRALogger;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
-import io.swagger.annotations.ResponseHeader;
-
-import javax.enterprise.context.ApplicationScoped;
-
+import javax.enterprise.context.RequestScoped;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
@@ -87,10 +78,13 @@ import static javax.ws.rs.core.Response.Status.BAD_REQUEST;
 import static org.eclipse.microprofile.lra.annotation.ws.rs.LRA.LRA_HTTP_HEADER;
 import static org.eclipse.microprofile.lra.annotation.ws.rs.LRA.LRA_HTTP_RECOVERY_HEADER;
 
-@ApplicationScoped
+@RequestScoped
 @Path(COORDINATOR_PATH_NAME)
-@Api(value = COORDINATOR_PATH_NAME, tags = "LRA Coordinator")
+//@Api(value = COORDINATOR_PATH_NAME, tags = "LRA Coordinator")
 public class Coordinator {
+
+    @Inject
+    private Current current;
 
     @Context
     private UriInfo context;
@@ -102,11 +96,11 @@ public class Coordinator {
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
-    @ApiOperation(value = "Returns all LRAs",
-            notes = "Gets both active and recovering LRAs",
-            response = LRAData.class, responseContainer = "List")
+//    @ApiOperation(value = "Returns all LRAs",
+//            notes = "Gets both active and recovering LRAs",
+//            response = LRAData.class, responseContainer = "List")
     public List<LRAData> getAllLRAs(
-            @ApiParam(value = "Filter the returned LRAs to only those in the give state (see CompensatorStatus)", required = false)
+//            @ApiParam(value = "Filter the returned LRAs to only those in the give state (see CompensatorStatus)", required = false)
             @QueryParam(STATUS_PARAM_NAME) @DefaultValue("") String state) {
         List<LRAStatusHolder> lras = lraService.getAll(state);
 
@@ -129,19 +123,19 @@ public class Coordinator {
     @GET
     @Path("{LraId}")
     @Produces(MediaType.TEXT_PLAIN)
-    @ApiOperation(value = "Obtain the status of an LRA as a string",
-            response = String.class)
-    @ApiResponses({
-            @ApiResponse(code = 404, message =
-                    "The coordinator has no knowledge of this LRA"),
-            @ApiResponse(code = 204, message =
-                    "The LRA exists and has not yet been asked to close or cancel "
-                           + " - compare this response with a 200 response.s"),
-            @ApiResponse(code = 200, message =
-                    "The LRA exists. The status is reported in the content body.")
-    })
+//    @ApiOperation(value = "Obtain the status of an LRA as a string",
+//            response = String.class)
+//    @ApiResponses({
+//            @ApiResponse(code = 404, message =
+//                    "The coordinator has no knowledge of this LRA"),
+//            @ApiResponse(code = 204, message =
+//                    "The LRA exists and has not yet been asked to close or cancel "
+//                           + " - compare this response with a 200 response.s"),
+//            @ApiResponse(code = 200, message =
+//                    "The LRA exists. The status is reported in the content body.")
+//    })
     public Response getLRAStatus(
-            @ApiParam(value = "The unique identifier of the LRA", required = true)
+//            @ApiParam(value = "The unique identifier of the LRA", required = true)
             @PathParam("LraId")String lraId) throws NotFoundException {
         LRAStatus status = lraService.getTransaction(toURI(lraId)).getLRAStatus();
 
@@ -155,19 +149,19 @@ public class Coordinator {
     @GET
     @Path("{LraId}")
     @Produces(MediaType.APPLICATION_JSON)
-    @ApiOperation(value = "Obtain the status of an LRA as a JSON structure",
-            response = String.class)
-    @ApiResponses({
-            @ApiResponse(code = 404, message =
-                    "The coordinator has no knowledge of this LRA"),
-            @ApiResponse(code = 204, message =
-                    "The LRA exists and has not yet been asked to close or cancel "
-                            + " - compare this response with a 200 response.s"),
-            @ApiResponse(code = 200, message =
-                    "The LRA exists. The status is reported in the content body.")
-    })
+//    @ApiOperation(value = "Obtain the status of an LRA as a JSON structure",
+//            response = String.class)
+//    @ApiResponses({
+//            @ApiResponse(code = 404, message =
+//                    "The coordinator has no knowledge of this LRA"),
+//            @ApiResponse(code = 204, message =
+//                    "The LRA exists and has not yet been asked to close or cancel "
+//                            + " - compare this response with a 200 response.s"),
+//            @ApiResponse(code = 200, message =
+//                    "The LRA exists. The status is reported in the content body.")
+//    })
     public LRAData getLRAInfo(
-            @ApiParam(value = "The unique identifier of the LRA", required = true)
+//            @ApiParam(value = "The unique identifier of the LRA", required = true)
             @PathParam("LraId") String lraId) throws NotFoundException {
 
         return lraService.getLRA(toURI(lraId));
@@ -193,15 +187,15 @@ public class Coordinator {
     // Performing a GET on /lra-io.narayana.lra.coordinator/<LraId> returns 200 if the lra is still active.
     @GET
     @Path("/status/{LraId}")
-    @Produces(MediaType.APPLICATION_JSON)
-    @ApiOperation(value = "Indicates whether an LRA is active",
-            response = Boolean.class)
-    @ApiResponses({
-            @ApiResponse(code = 404, message = "The coordinator has no knowledge of this LRA"),
-            @ApiResponse(code = 200, message = "If the LRA exists")
-    })
+    @Produces(MediaType.TEXT_PLAIN)
+//    @ApiOperation(value = "Indicates whether an LRA is active",
+//            response = Boolean.class)
+//    @ApiResponses({
+//            @ApiResponse(code = 404, message = "The coordinator has no knowledge of this LRA"),
+//            @ApiResponse(code = 200, message = "If the LRA exists")
+//    })
     public Boolean isActiveLRA(
-            @ApiParam(value = "The unique identifier of the LRA", required = true)
+//            @ApiParam(value = "The unique identifier of the LRA", required = true)
             @PathParam("LraId")String lraId) throws NotFoundException {
         return lraService.getTransaction(toURI(lraId)).isActive();
     }
@@ -214,29 +208,29 @@ public class Coordinator {
     @POST
     @Path("start")
     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN})
-    @ApiOperation(value = "Start a new LRA",
-            notes = "The LRA model uses a presumed nothing protocol: the coordinator must communicate\n"
-                    + "with Compensators in order to inform them of the LRA activity. Every time a\n"
-                    + "Compensator is enrolled with a LRA, the coordinator must make information about\n"
-                    + "it durable so that the Compensator can be contacted when the LRA terminates,\n"
-                    + "even in the event of subsequent failures. Compensators, clients and coordinators\n"
-                    + "cannot make any presumption about the state of the global transaction without\n"
-                    + "consulting the coordinator and all compensators, respectively.",
-            response = String.class)
-    @ApiResponses({
-            @ApiResponse(code = 201, message = "The request was successful and the response body contains the id of the new LRA"),
-            @ApiResponse(code = 500, message = "A new LRA could not be started")
-    })
+//    @ApiOperation(value = "Start a new LRA",
+//            notes = "The LRA model uses a presumed nothing protocol: the coordinator must communicate\n"
+//                    + "with Compensators in order to inform them of the LRA activity. Every time a\n"
+//                    + "Compensator is enrolled with a LRA, the coordinator must make information about\n"
+//                    + "it durable so that the Compensator can be contacted when the LRA terminates,\n"
+//                    + "even in the event of subsequent failures. Compensators, clients and coordinators\n"
+//                    + "cannot make any presumption about the state of the global transaction without\n"
+//                    + "consulting the coordinator and all compensators, respectively.",
+//            response = String.class)
+//    @ApiResponses({
+//            @ApiResponse(code = 201, message = "The request was successful and the response body contains the id of the new LRA"),
+//            @ApiResponse(code = 500, message = "A new LRA could not be started")
+//    })
 
     public Response startLRA(
-            @ApiParam(value = "Each client is expected to have a unique identity (which can be a URL).", required = false)
+//            @ApiParam(value = "Each client is expected to have a unique identity (which can be a URL).", required = false)
             @QueryParam(CLIENT_ID_PARAM_NAME) @DefaultValue("") String clientId,
-            @ApiParam(value = "Specifies the maximum time in milli seconds that the LRA will exist for.\n"
-                    + "If the LRA is terminated because of a timeout, the LRA URL is deleted.\n"
-                    + "All further invocations on the URL will return 404.\n"
-                    + "The invoker can assume this was equivalent to a compensate operation.")
+//            @ApiParam(value = "Specifies the maximum time in milli seconds that the LRA will exist for.\n"
+//                    + "If the LRA is terminated because of a timeout, the LRA URL is deleted.\n"
+//                    + "All further invocations on the URL will return 404.\n"
+//                    + "The invoker can assume this was equivalent to a compensate operation.")
             @QueryParam(TIMELIMIT_PARAM_NAME) @DefaultValue("0") Long timelimit,
-            @ApiParam(value = "The enclosing LRA if this new LRA is nested", required = false)
+//            @ApiParam(value = "The enclosing LRA if this new LRA is nested", required = false)
             @QueryParam(PARENT_LRA_PARAM_NAME) @DefaultValue("") String parentLRA,
             @HeaderParam(LRA_HTTP_HEADER) String parentId) throws WebApplicationException, InvalidLRAIdException {
 
@@ -276,27 +270,27 @@ public class Coordinator {
             }
         }
 
-        Current.push(lraId);
+        current.push(lraId);
 
         return Response.status(Response.Status.CREATED)
                 .entity(lraId)
-                .header(LRA_HTTP_HEADER, Current.getContexts())
+                .header(LRA_HTTP_HEADER, current.getContexts())
                 .build();
     }
 
     @PUT
     @Path("{LraId}/renew")
-    @ApiOperation(value = "Update the TimeLimit for an existing LRA",
-            notes = "LRAs can be automatically cancelled if they aren't closed or cancelled before the TimeLimit\n"
-                    + "specified at creation time is reached.\n"
-                    + "The time limit can be updated.\n")
-    @ApiResponses({
-            @ApiResponse(code = 200, message = "If the LRA timelimit has been updated"),
-            @ApiResponse(code = 404, message = "The coordinator has no knowledge of this LRA"),
-            @ApiResponse(code = 412, message = "The LRA is not longer active (ie in the complete or compensate messages have been sent")
-    })
+//    @ApiOperation(value = "Update the TimeLimit for an existing LRA",
+//            notes = "LRAs can be automatically cancelled if they aren't closed or cancelled before the TimeLimit\n"
+//                    + "specified at creation time is reached.\n"
+//                    + "The time limit can be updated.\n")
+//    @ApiResponses({
+//            @ApiResponse(code = 200, message = "If the LRA timelimit has been updated"),
+//            @ApiResponse(code = 404, message = "The coordinator has no knowledge of this LRA"),
+//            @ApiResponse(code = 412, message = "The LRA is not longer active (ie in the complete or compensate messages have been sent")
+//    })
     public Response renewTimeLimit(
-            @ApiParam(value = "The new time limit for the LRA", required = true)
+//            @ApiParam(value = "The new time limit for the LRA", required = true)
             @QueryParam(TIMELIMIT_PARAM_NAME) @DefaultValue("0") Long timelimit,
             @PathParam("LraId")String lraId) throws NotFoundException {
 
@@ -350,39 +344,39 @@ public class Coordinator {
     // TODO rework spec to allow an LRAStatus header everywhere
     @PUT
     @Path("{LraId}/close")
-    @Produces(MediaType.APPLICATION_JSON)
-    @ApiOperation(value = "Attempt to close an LRA",
-            notes = "Trigger the successful completion of the LRA. All"
-                    + " compensators will be dropped by the coordinator."
-                    + " The complete message will be sent to the compensators."
-                    + " Upon termination, the URL is implicitly deleted."
-                    + " The invoker cannot know for sure whether the lra completed or compensated without enlisting a participant.",
-            response = Boolean.class)
-    @ApiResponses({
-            @ApiResponse(code = 404, message = "The coordinator has no knowledge of this LRA"),
-            @ApiResponse(code = 200, message = "The complete message was sent to all coordinators")
-    })
+    @Produces(MediaType.TEXT_PLAIN)
+//    @ApiOperation(value = "Attempt to close an LRA",
+//            notes = "Trigger the successful completion of the LRA. All"
+//                    + " compensators will be dropped by the coordinator."
+//                    + " The complete message will be sent to the compensators."
+//                    + " Upon termination, the URL is implicitly deleted."
+//                    + " The invoker cannot know for sure whether the lra completed or compensated without enlisting a participant.",
+//            response = Boolean.class)
+//    @ApiResponses({
+//            @ApiResponse(code = 404, message = "The coordinator has no knowledge of this LRA"),
+//            @ApiResponse(code = 200, message = "The complete message was sent to all coordinators")
+//    })
     public Response closeLRA(
-            @ApiParam(value = "The unique identifier of the LRA", required = true)
+//            @ApiParam(value = "The unique identifier of the LRA", required = true)
             @PathParam("LraId")String txId) throws NotFoundException {
         return endLRA(toURI(txId), false, false);
     }
 
     @PUT
     @Path("{LraId}/cancel")
-    @Produces(MediaType.APPLICATION_JSON)
-    @ApiOperation(value = "Attempt to cancel an LRA",
-            notes =   " Trigger the compensation of the LRA. All"
-                    + " compensators will be triggered by the coordinator (ie the compensate message will be sent to each compensators)."
-                    + " Upon termination, the URL is implicitly deleted."
-                    + " The invoker cannot know for sure whether the lra completed or compensated without enlisting a participant.",
-            response = Boolean.class)
-    @ApiResponses({
-            @ApiResponse(code = 404, message = "The coordinator has no knowledge of this LRA"),
-            @ApiResponse(code = 200, message = "The compensate message was sent to all coordinators")
-    })
+    @Produces(MediaType.TEXT_PLAIN)
+//    @ApiOperation(value = "Attempt to cancel an LRA",
+//            notes =   " Trigger the compensation of the LRA. All"
+//                    + " compensators will be triggered by the coordinator (ie the compensate message will be sent to each compensators)."
+//                    + " Upon termination, the URL is implicitly deleted."
+//                    + " The invoker cannot know for sure whether the lra completed or compensated without enlisting a participant.",
+//            response = Boolean.class)
+//    @ApiResponses({
+//            @ApiResponse(code = 404, message = "The coordinator has no knowledge of this LRA"),
+//            @ApiResponse(code = 200, message = "The compensate message was sent to all coordinators")
+//    })
     public Response cancelLRA(
-            @ApiParam(value = "The unique identifier of the LRA", required = true)
+//            @ApiParam(value = "The unique identifier of the LRA", required = true)
             @PathParam("LraId")String lraId) throws NotFoundException {
         return endLRA(toURI(lraId), true, false);
     }
@@ -399,39 +393,39 @@ public class Coordinator {
 
     @PUT
     @Path("{LraId}")
-    @Produces(MediaType.APPLICATION_JSON)
-    @ApiOperation(value = "A Compensator can join with the LRA at any time prior to the completion of an activity",
-            response = String.class)
-    @ResponseHeader(name = LRA_HTTP_RECOVERY_HEADER, response = String.class,
-            description = "If the participant is successfully registered with the LRA then this header\n"
-                    + " will contain a unique resource reference for that participant:\n"
-                    + " - HTTP GET on the reference returns the original participant URL;\n"
-                    + " - HTTP PUT on the reference will overwrite the old participant URL with the new one supplied.")
-    @ApiResponses({
-            @ApiResponse(code = 404, message = "The coordinator has no knowledge of this LRA"),
-            @ApiResponse(code = 412, message = "The LRA is not longer active (ie in the complete or compensate messages have been sent"),
-            @ApiResponse(code = 200, message = "The participant was successfully registered with the LRA and"
-                    + " the response body contains a unique resource reference for that participant:\n"
-                    + " - HTTP GET on the reference returns the original participant URL;\n"
-                    + " - HTTP PUT on the reference will overwrite the old participant URL with the new one supplied."
-           )
-    })
+    @Produces(MediaType.TEXT_PLAIN)
+//    @ApiOperation(value = "A Compensator can join with the LRA at any time prior to the completion of an activity",
+//            response = String.class)
+//    @ResponseHeader(name = LRA_HTTP_RECOVERY_HEADER, response = String.class,
+//            description = "If the participant is successfully registered with the LRA then this header\n"
+//                    + " will contain a unique resource reference for that participant:\n"
+//                    + " - HTTP GET on the reference returns the original participant URL;\n"
+//                    + " - HTTP PUT on the reference will overwrite the old participant URL with the new one supplied.")
+//    @ApiResponses({
+//            @ApiResponse(code = 404, message = "The coordinator has no knowledge of this LRA"),
+//            @ApiResponse(code = 412, message = "The LRA is not longer active (ie in the complete or compensate messages have been sent"),
+//            @ApiResponse(code = 200, message = "The participant was successfully registered with the LRA and"
+//                    + " the response body contains a unique resource reference for that participant:\n"
+//                    + " - HTTP GET on the reference returns the original participant URL;\n"
+//                    + " - HTTP PUT on the reference will overwrite the old participant URL with the new one supplied."
+//           )
+//    })
     public Response joinLRAViaBody(
-            @ApiParam(value = "The unique identifier of the LRA", required = true)
+//            @ApiParam(value = "The unique identifier of the LRA", required = true)
             @PathParam("LraId")String lraId,
-            @ApiParam(value = "The time limit (in seconds) that the Compensator can guarantee that it can compensate the work performed by the service."
-                    + " After this time period has elapsed, it may no longer be possible to undo the work within the scope of this (or any enclosing) LRA."
-                    + " It may therefore be necessary for the application or service to start other activities to explicitly try to compensate this work."
-                    + " The application or coordinator may use this information to control the lifecycle of a LRA.",
-                    required = true)
+//            @ApiParam(value = "The time limit (in seconds) that the Compensator can guarantee that it can compensate the work performed by the service."
+//                    + " After this time period has elapsed, it may no longer be possible to undo the work within the scope of this (or any enclosing) LRA."
+//                    + " It may therefore be necessary for the application or service to start other activities to explicitly try to compensate this work."
+//                    + " The application or coordinator may use this information to control the lifecycle of a LRA.",
+//                    required = true)
             @QueryParam(TIMELIMIT_PARAM_NAME) @DefaultValue("0") long timeLimit,
-            @ApiParam(value = "The resource paths that the coordinator will use to complete or compensate and to request"
-                    + " the status of the participant. The link rel names are"
-                    + " complete, compensate and status.",
-                    required = false)
+//            @ApiParam(value = "The resource paths that the coordinator will use to complete or compensate and to request"
+//                    + " the status of the participant. The link rel names are"
+//                    + " complete, compensate and status.",
+//                    required = false)
             @HeaderParam("Link") String compensatorLink,
-            @ApiParam(value = "opaque data that will be stored with the coordinator and passed back to\n"
-                    + "the participant when the LRA is closed or cancelled.\n")
+//            @ApiParam(value = "opaque data that will be stored with the coordinator and passed back to\n"
+//                    + "the participant when the LRA is closed or cancelled.\n")
                     String compensatorData) throws NotFoundException {
         // test to see if the join request contains any participant specific data
         boolean isLink = isLink(compensatorData);
@@ -523,15 +517,15 @@ public class Coordinator {
     @PUT
     @Path("{LraId}/remove")
     @Produces(MediaType.APPLICATION_JSON)
-    @ApiOperation(value = "A Compensator can resign from the LRA at any time prior to the completion of an activity",
-            response = Boolean.class)
-    @ApiResponses({
-            @ApiResponse(code = 404, message = "The coordinator has no knowledge of this LRA"),
-            @ApiResponse(code = 412, message = "The LRA is not longer active (ie in the complete or compensate messages have been sent"),
-            @ApiResponse(code = 200, message = "If the participant was successfully removed from the LRA")
-    })
+//    @ApiOperation(value = "A Compensator can resign from the LRA at any time prior to the completion of an activity",
+//            response = Boolean.class)
+//    @ApiResponses({
+//            @ApiResponse(code = 404, message = "The coordinator has no knowledge of this LRA"),
+//            @ApiResponse(code = 412, message = "The LRA is not longer active (ie in the complete or compensate messages have been sent"),
+//            @ApiResponse(code = 200, message = "If the participant was successfully removed from the LRA")
+//    })
     public Response leaveLRA(
-            @ApiParam(value = "The unique identifier of the LRA", required = true)
+//            @ApiParam(value = "The unique identifier of the LRA", required = true)
             @PathParam("LraId") String lraId,
             String compensatorUrl) throws NotFoundException, URISyntaxException {
         String reqUri = context.getRequestUri().toString();

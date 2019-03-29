@@ -21,9 +21,10 @@
  */
 package io.narayana.lra.coordinator.api;
 
-import io.narayana.lra.Current;
 import org.eclipse.microprofile.lra.client.GenericLRAException;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.container.ContainerResponseContext;
@@ -38,7 +39,12 @@ import java.net.URISyntaxException;
 import static org.eclipse.microprofile.lra.annotation.ws.rs.LRA.LRA_HTTP_HEADER;
 
 @Provider
+@RequestScoped
 public class CoordinatorContainerFilter implements ContainerRequestFilter, ContainerResponseFilter {
+
+    @Inject
+    private Current current;
+
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
         MultivaluedMap<String, String> headers = requestContext.getHeaders();
@@ -46,10 +52,10 @@ public class CoordinatorContainerFilter implements ContainerRequestFilter, Conta
 
         if (headers.containsKey(LRA_HTTP_HEADER)) {
             try {
-                lraId = new URI(Current.getLast(headers.get(LRA_HTTP_HEADER)));
+                lraId = new URI(current.getLast(headers.get(LRA_HTTP_HEADER)));
             } catch (URISyntaxException e) {
                 String msg = String.format("header %s contains an invalid URL %s",
-                        LRA_HTTP_HEADER, Current.getLast(headers.get(LRA_HTTP_HEADER)));
+                        LRA_HTTP_HEADER, current.getLast(headers.get(LRA_HTTP_HEADER)));
 
                 throw new GenericLRAException(null, Response.Status.PRECONDITION_FAILED.getStatusCode(), msg, e);
             }
@@ -64,12 +70,12 @@ public class CoordinatorContainerFilter implements ContainerRequestFilter, Conta
         }
 
         if (lraId != null) {
-            Current.updateLRAContext(lraId, headers);
+            current.updateLRAContext(lraId, headers);
         }
     }
 
     @Override
     public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) throws IOException {
-        Current.updateLRAContext(responseContext);
+        current.updateLRAContext(responseContext);
     }
 }
