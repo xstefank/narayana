@@ -327,7 +327,19 @@ public class LRARecord extends AbstractRecord implements Comparable<AbstractReco
 
                 httpStatus = response.getStatus();
 
-                accepted = httpStatus == Response.Status.ACCEPTED.getStatusCode();
+                ParticipantStatus participantStatus = null;
+                if (response.hasEntity()) {
+                    try {
+                        participantStatus = ParticipantStatus.valueOf(response.readEntity(String.class));
+                    } catch (IllegalArgumentException e) {
+                        // intentionally empty
+                    }
+                }
+
+                accepted = httpStatus == Response.Status.ACCEPTED.getStatusCode() ||
+                    (participantStatus != null &&
+                        (participantStatus.equals(ParticipantStatus.Completing) ||
+                            participantStatus.equals(ParticipantStatus.Compensating)));
 
                 if (accepted && statusURI == null) {
                     // the participant could not finish immediately and we have no status URI so one should be
@@ -349,10 +361,6 @@ public class LRARecord extends AbstractRecord implements Comparable<AbstractReco
                 if (httpStatus == Response.Status.NOT_FOUND.getStatusCode()) {
                     updateStatus(compensate);
                     return TwoPhaseOutcome.FINISH_OK; // the participant must have finished ok but we lost the response
-                }
-
-                if (response.hasEntity()) {
-                    responseData = response.readEntity(String.class);
                 }
             } catch (Exception e) {
                 if (LRALogger.logger.isInfoEnabled()) {
