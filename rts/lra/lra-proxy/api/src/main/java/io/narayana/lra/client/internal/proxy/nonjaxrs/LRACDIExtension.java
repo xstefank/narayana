@@ -21,6 +21,7 @@
  */
 package io.narayana.lra.client.internal.proxy.nonjaxrs;
 
+import io.narayana.lra.logging.LRALogger;
 import org.eclipse.microprofile.lra.annotation.Compensate;
 import org.eclipse.microprofile.lra.annotation.Complete;
 import org.eclipse.microprofile.lra.annotation.Forget;
@@ -29,7 +30,11 @@ import org.eclipse.microprofile.lra.annotation.Status;
 import org.eclipse.microprofile.lra.annotation.ws.rs.LRA;
 import org.eclipse.microprofile.lra.participant.InvalidLRAParticipantDefinitionException;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
+import javax.enterprise.inject.spi.AfterBeanDiscovery;
+import javax.enterprise.inject.spi.BeanManager;
+import javax.enterprise.inject.spi.CDI;
 import javax.enterprise.inject.spi.Extension;
 import javax.enterprise.inject.spi.ProcessAnnotatedType;
 import javax.enterprise.inject.spi.WithAnnotations;
@@ -39,6 +44,8 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.net.URI;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.CompletionStage;
 
 /**
@@ -50,8 +57,18 @@ public class LRACDIExtension implements Extension {
 
     private String currentMethodGenericString;
 
-    private LRAParticipantRegistry participantRegistry = LRAParticipantRegistry.getInstance();
+    private Map<String, LRAParticipant> lraParticipants = new HashMap<>();
 
+    public void observeAfter(@Observes AfterBeanDiscovery afterBeanDiscovery, BeanManager beanManager) { 
+        LRALogger.logger.error("ASDFASDFASDAAAAAAAAAAAAAAAAAAa " + afterBeanDiscovery);
+        afterBeanDiscovery.addBean()
+            .read(beanManager.createAnnotatedType(LRAParticipantRegistry.class))
+            .beanClass(LRAParticipantRegistry.class)
+            .scope(ApplicationScoped.class)
+            .name("lraParticipantRegistry")
+            .createWith(creationalContext -> new LRAParticipantRegistry(lraParticipants));
+    }
+    
     public void observe(@Observes @WithAnnotations(Path.class) ProcessAnnotatedType<?> type) {
         Class<?> javaClass = type.getAnnotatedType().getJavaClass();
 
@@ -69,7 +86,7 @@ public class LRACDIExtension implements Extension {
             participant.getForgetMethod() != null;
 
         if (shouldRegister) {
-            participantRegistry.registerParticipant(participant);
+            lraParticipants.put(participant.getId().getName(), participant);
         }
     }
 

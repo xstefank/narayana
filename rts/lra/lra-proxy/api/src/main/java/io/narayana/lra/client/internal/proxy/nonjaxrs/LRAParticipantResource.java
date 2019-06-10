@@ -27,6 +27,7 @@ import org.eclipse.microprofile.lra.annotation.Forget;
 import org.eclipse.microprofile.lra.annotation.Status;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
@@ -52,7 +53,8 @@ public class LRAParticipantResource {
 
     static final String RESOURCE_PATH = "lra-participant-proxy";
 
-    private LRAParticipantRegistry lraParticipantRegistry = LRAParticipantRegistry.getInstance();
+    @Inject
+    private LRAParticipantRegistry lraParticipantRegistry;
 
     @PUT
     @Path("{participantId}/" + COMPENSATE)

@@ -30,18 +30,14 @@ import java.util.Map;
  */
 public class LRAParticipantRegistry {
 
-    private static Map<String, LRAParticipant> lraParticipants = new HashMap<>();
-    private static final LRAParticipantRegistry INSTANCE = new LRAParticipantRegistry();
-
-    private LRAParticipantRegistry() {
+    private Map<String, LRAParticipant> lraParticipants;
+    
+    public LRAParticipantRegistry() {
+        lraParticipants = new HashMap<>();
     }
 
-    public static LRAParticipantRegistry getInstance() {
-        return INSTANCE;
-    }
-
-    void registerParticipant(LRAParticipant lraParticipant) {
-        lraParticipants.put(lraParticipant.getId().getName(), lraParticipant);
+    public LRAParticipantRegistry(Map<String, LRAParticipant> lraParticipants) {
+        this.lraParticipants = new HashMap<>(lraParticipants);
     }
 
     public LRAParticipant getParticipant(String id) {

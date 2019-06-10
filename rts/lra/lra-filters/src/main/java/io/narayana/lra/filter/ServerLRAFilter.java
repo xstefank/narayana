@@ -30,10 +30,11 @@ import io.narayana.lra.logging.LRALogger;
 import org.eclipse.microprofile.lra.annotation.Compensate;
 import org.eclipse.microprofile.lra.annotation.Complete;
 import org.eclipse.microprofile.lra.annotation.Forget;
+import org.eclipse.microprofile.lra.annotation.Status;
 import org.eclipse.microprofile.lra.annotation.ws.rs.LRA;
 import org.eclipse.microprofile.lra.annotation.ws.rs.Leave;
-import org.eclipse.microprofile.lra.annotation.Status;
 
+import javax.inject.Inject;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.client.Client;
@@ -104,7 +105,8 @@ public class ServerLRAFilter implements ContainerRequestFilter, ContainerRespons
         }
     }
 
-    private LRAParticipantRegistry lraParticipantRegistry = LRAParticipantRegistry.getInstance();
+    @Inject
+    private LRAParticipantRegistry lraParticipantRegistry;
 
     @Override
     public void filter(ContainerRequestContext containerRequestContext) {
@@ -299,6 +301,7 @@ public class ServerLRAFilter implements ContainerRequestFilter, ContainerRespons
             String timeLimitStr = terminateURIs.get(TIMELIMIT_PARAM_NAME);
             long timeLimit = timeLimitStr == null ? NarayanaLRAClient.DEFAULT_TIMEOUT_MILLIS : Long.valueOf(timeLimitStr);
 
+            LRALogger.logger.error("XXXXXXXXXXXXXXXXXXX " + lraParticipantRegistry);
             LRAParticipant participant = lraParticipantRegistry.getParticipant(resourceInfo.getResourceClass().getName());
 
             if (terminateURIs.containsKey("Link") || participant != null) {
