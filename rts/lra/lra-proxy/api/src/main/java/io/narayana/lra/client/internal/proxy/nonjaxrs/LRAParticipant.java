@@ -48,7 +48,7 @@ import static io.narayana.lra.LRAConstants.STATUS;
  */
 public class LRAParticipant {
 
-    private Class<?> id;
+    private Class<?> participantClass;
     private Method compensateMethod;
     private Method completeMethod;
     private Method statusMethod;
@@ -57,12 +57,12 @@ public class LRAParticipant {
 
     private Map<URI, Optional<?>> participantStatusMap = new HashMap<>();
 
-    LRAParticipant(Class<?> id) {
-        this.id = id;
+    LRAParticipant(Class<?> participantClass) {
+        this.participantClass = participantClass;
     }
 
-    Class<?> getId() {
-        return id;
+    Class<?> getParticipantClass() {
+        return participantClass;
     }
 
     synchronized Response compensate(URI lraId, URI parentId) {
@@ -103,7 +103,7 @@ public class LRAParticipant {
 
             if (shouldInvokeParticipantMethod(result)) {
                 LRALogger.i18NLogger.warn_participantReturnsImmediateStateFromCompletionStage(
-                    getId().getName(), lraId.toASCIIString());
+                    getParticipantClass().getName(), lraId.toASCIIString());
                 return invokeParticipantMethod(method, lraId, parentId, type);
             }
 
@@ -130,7 +130,7 @@ public class LRAParticipant {
 
     private Response invokeParticipantMethod(Method method, URI lraId,
                                              URI parentId, String type) {
-        Object participant = instance != null ? instance : CDI.current().select(id).get();
+        Object participant = instance != null ? instance : CDI.current().select(participantClass).get();
         Object result;
 
         switch (method.getParameterCount()) {
@@ -252,7 +252,7 @@ public class LRAParticipant {
     public void augmentTerminationURIs(Map<String, String> terminateURIs, URI baseUri) {
         String baseURI = UriBuilder.fromUri(baseUri)
             .path(LRAParticipantResource.RESOURCE_PATH)
-            .path(id.getName())
+            .path(participantClass.getName())
             .build().toASCIIString();
 
         if (!terminateURIs.containsKey(COMPLETE) && completeMethod != null) {

@@ -203,6 +203,10 @@ public interface lraI18NLogger {
     @Message(id = 25039, value = "Cannot process non JAX-RS LRA participant")
     void error_cannotProcessParticipant(@Cause ReflectiveOperationException e);
 
+    @LogMessage(level = ERROR)
+    @Message(id = 25040, value = "Cannot load participant class %s")
+    void error_cannotLoadParticipantClass(String className, @Cause ClassNotFoundException e);
+
     /*
         Allocate new messages directly above this notice.
           - id: use the next id number in numeric sequence. Don't reuse ids.

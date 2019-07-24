@@ -21,6 +21,7 @@
  */
 package io.narayana.lra.client.internal.proxy.nonjaxrs;
 
+import io.narayana.lra.client.internal.proxy.nonjaxrs.jandex.DotNames;
 import io.narayana.lra.logging.LRALogger;
 import org.eclipse.microprofile.lra.annotation.Compensate;
 import org.eclipse.microprofile.lra.annotation.Complete;
@@ -34,6 +35,7 @@ import org.jboss.jandex.AnnotationTarget;
 import org.jboss.jandex.ClassInfo;
 import org.jboss.jandex.DotName;
 import org.jboss.jandex.Index;
+import org.jboss.jandex.MethodInfo;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
@@ -61,6 +63,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CompletionStage;
+import java.util.function.Function;
 
 /**
  * This CDI extension collects all LRA participants that contain
@@ -88,17 +91,16 @@ public class LRACDIExtension implements Extension {
             } else {
                 continue;
             }
-
-            Class<?> clazz = getClass().getClassLoader().loadClass(classInfo.name().toString());
-
-            LRAParticipant participant = processJavaClass(clazz);
+            
+            LRAParticipant participant = processJavaClass(classInfo);
             if (participant != null) {
-                participants.put(participant.getId().getName(), participant);
-                Set<Bean<?>> participantBeans = beanManager.getBeans(clazz, new AnnotationLiteral<Any>() {});
+                Class<?> participantClass = participant.getParticipantClass();
+                participants.put(participantClass.getName(), participant);
+                Set<Bean<?>> participantBeans = beanManager.getBeans(participantClass, new AnnotationLiteral<Any>() {});
                 if (participantBeans.isEmpty()) {
                     // resource is not registered as managed bean so register a custom managed instance
                     try {
-                        participant.setInstance(clazz.newInstance());
+                        participant.setInstance(participantClass.newInstance());
                     } catch (InstantiationException | IllegalAccessException e) {
                         LRALogger.i18NLogger.error_cannotProcessParticipant(e);
                     }
@@ -119,12 +121,27 @@ public class LRACDIExtension implements Extension {
      * @param javaClass a class to be scanned
      * @return Collected methods wrapped in {@link LRAParticipant} class or null if no non-JAX-RS methods have been found
      */
-    private LRAParticipant processJavaClass(Class<?> javaClass) {
-        if (isNotLRAParticipant(javaClass)) {
+    private LRAParticipant processJavaClass(ClassInfo classInfo) {
+        if (isNotLRAParticipant(classInfo)) {
             return null;
         }
 
-        LRAParticipant participant = new LRAParticipant(javaClass);
+        Class<?> clazz;
+        if ((clazz = loadParticipantClass(classInfo)) == null) {
+            return null;
+        } 
+
+        LRAParticipant participant = new LRAParticipant(clazz);
+        
+        // process participant annotations
+        Map<DotName, List<AnnotationInstance>> annotations = classInfo.annotations();
+        List<AnnotationInstance> annotationInstances = annotations.get(DotNames.COMPENSATE);
+        if (!annotationInstances.isEmpty()) {
+            AnnotationInstance annotationInstance = annotationInstances.get(0);
+            MethodInfo methodInfo = annotationInstance.target().asMethod();
+            verifyParticipantMethodSignature(methodInfo);
+            Method method = getMethod(methodInfo, clazz);
+        }
 
         Arrays.stream(javaClass.getDeclaredMethods()).forEach(m -> processParticipantMethod(m, participant));
 
@@ -136,27 +153,61 @@ public class LRACDIExtension implements Extension {
         return shouldProcess ? participant : null;
     }
 
-    private boolean isNotLRAParticipant(Class<?> javaClass) {
-        boolean lra = false;
-        boolean compensate = false;
-        int i = 0;
-
-        Method[] declaredMethods = javaClass.getDeclaredMethods();
-
-        while (i < declaredMethods.length && (!lra || !compensate)) {
-            Method m = declaredMethods[i];
-            if (m.isAnnotationPresent(LRA.class)) {
-                lra = true;
-            }
-
-            if (m.isAnnotationPresent(Compensate.class)) {
-                compensate = true;
-            }
-
-            i++;
+    private void verifyParticipantMethodSignature(MethodInfo methodInfo) {
+        if (isJaxRsMethod(methodInfo)) {
+            return;
         }
 
-        return !lra || !compensate;
+        verifyReturnType(methodInfo);
+
+        Class<?>[] parameterTypes = method.getParameterTypes();
+
+        if (parameterTypes.length > 2) {
+            throw new InvalidLRAParticipantDefinitionException(String.format("%s: %s",
+                method.toGenericString(), "Participant method cannot have more than 2 arguments"));
+        }
+
+        if (parameterTypes.length > 0 && !parameterTypes[0].equals(URI.class)) {
+            throw new InvalidLRAParticipantDefinitionException(String.format("%s: %s",
+                method.toGenericString(), "Invalid argument type in LRA participant method: " + parameterTypes[0]));
+        }
+
+        if (parameterTypes.length > 1 && !parameterTypes[1].equals(URI.class)) {
+            throw new InvalidLRAParticipantDefinitionException(String.format("%s: %s",
+                method.toGenericString(), "Invalid argument type in LRA participant method: " + parameterTypes[1]));
+        }
+    }
+
+    private Method getMethod(MethodInfo methodInfo, Class<?> clazz) {
+        try {
+            switch (methodInfo.parameters().size()) {
+                case 2:
+                    return clazz.getMethod(methodInfo.name(), String.class, String.class);
+                case 1:
+                    return clazz.getMethod(methodInfo.name(), String.class);
+                case 0:
+                    return clazz.getMethod(methodInfo.name());
+                default:
+                    return null;
+            }
+        } catch (NoSuchMethodException e) {
+            return null;
+        }
+    }
+
+    private Class<?> loadParticipantClass(ClassInfo classInfo) {
+        try {
+            return getClass().getClassLoader().loadClass(classInfo.name().toString());
+        } catch (ClassNotFoundException e) {
+            LRALogger.i18NLogger.error_cannotLoadParticipantClass(classInfo.name().toString(), e);
+        }
+        
+        return null;
+    }
+
+    private boolean isNotLRAParticipant(ClassInfo classInfo) {
+        Map<DotName, List<AnnotationInstance>> annotations = classInfo.annotations();
+        return !annotations.containsKey(DotNames.LRA) || !annotations.containsKey(DotNames.COMPENSATE); 
     }
 
     /**
@@ -196,13 +247,15 @@ public class LRACDIExtension implements Extension {
         }
     }
 
-    private boolean isJaxRsMethod(Method method) {
-        return method.isAnnotationPresent(GET.class) ||
-            method.isAnnotationPresent(POST.class) ||
-            method.isAnnotationPresent(PUT.class) ||
-            method.isAnnotationPresent(DELETE.class) ||
-            method.isAnnotationPresent(HEAD.class) ||
-            method.isAnnotationPresent(OPTIONS.class);
+    private boolean isJaxRsMethod(MethodInfo methodInfo) {
+        return methodInfo.annotations().stream()
+            .map(AnnotationInstance::name)
+            .anyMatch(name -> name.equals(DotNames.GET) ||
+                name.equals(DotNames.POST) ||
+                name.equals(DotNames.PUT) ||
+                name.equals(DotNames.DELETE) ||
+                name.equals(DotNames.HEAD) ||
+                name.equals(DotNames.OPTIONS));
     }
 
     private boolean setParticipantAnnotation(Method method, LRAParticipant participant) {
@@ -223,9 +276,10 @@ public class LRACDIExtension implements Extension {
         return false;
     }
 
-    private void verifyReturnType(Method method) {
-        Class<?> returnType = method.getReturnType();
+    private void verifyReturnType(MethodInfo methodInfo) {
+        org.jboss.jandex.Type type = methodInfo.returnType();
 
+        // no way how to get this information from method info
         if (returnType.equals(CompletionStage.class)) {
             Type genericReturnType = method.getGenericReturnType();
             ParameterizedType parameterizedType = (ParameterizedType) genericReturnType;
