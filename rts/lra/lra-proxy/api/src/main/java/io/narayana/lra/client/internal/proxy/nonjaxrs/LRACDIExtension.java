@@ -84,7 +84,6 @@ public class LRACDIExtension implements Extension {
                 }
             }
         }
-
         event.addBean()
             .read(beanManager.createAnnotatedType(LRAParticipantRegistry.class))
             .beanClass(LRAParticipantRegistry.class)

@@ -23,6 +23,7 @@
 package io.narayana.lra.arquillian;
 
 import io.narayana.lra.client.internal.proxy.nonjaxrs.LRACDIExtension;
+import io.narayana.lra.spi.NarayanaLraRecovery;
 import org.jboss.arquillian.container.test.spi.client.deployment.AuxiliaryArchiveAppender;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -48,6 +49,8 @@ public class ConfigAuxiliaryArchiveAppender implements AuxiliaryArchiveAppender 
                 .addAsResource("META-INF/services/javax.enterprise.inject.spi.Extension")
                 .addClass(org.jboss.weld.exceptions.DefinitionException.class)
                 .addAsManifestResource(new StringAsset("<beans version=\"1.1\" bean-discovery-mode=\"annotated\"></beans>"), "beans.xml");
+        // adding Narayana implementations of TCK SPI
+        archive.addPackages(true, NarayanaLraRecovery.class.getPackage());
 
         // adding Narayana LRA filters under the Thorntail deployment
         String filtersAsset = String.format("%s%n%s",
