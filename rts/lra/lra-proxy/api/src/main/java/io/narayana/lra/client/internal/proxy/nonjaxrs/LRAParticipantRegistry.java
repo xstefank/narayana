@@ -21,6 +21,8 @@
  */
 package io.narayana.lra.client.internal.proxy.nonjaxrs;
 
+import io.narayana.lra.logging.LRALogger;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,11 +39,13 @@ public class LRAParticipantRegistry {
         lraParticipants = new HashMap<>();
     }
 
-    LRAParticipantRegistry(Map<String, LRAParticipant> lraParticipants) {
+    public LRAParticipantRegistry(Map<String, LRAParticipant> lraParticipants) {
+        LRALogger.logger.error("IIIIIIIIIIIIIII " + lraParticipants.values());
         this.lraParticipants = new HashMap<>(lraParticipants);
     }
 
     public LRAParticipant getParticipant(String id) {
+        LRALogger.logger.error("YYYYYYYYYYYYYYY " + lraParticipants.values());
             return lraParticipants.get(id);
     }
 }
