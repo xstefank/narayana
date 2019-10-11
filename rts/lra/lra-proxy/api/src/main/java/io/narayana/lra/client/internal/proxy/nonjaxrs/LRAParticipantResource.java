@@ -21,6 +21,7 @@
  */
 package io.narayana.lra.client.internal.proxy.nonjaxrs;
 
+import io.narayana.lra.logging.LRALogger;
 import org.eclipse.microprofile.lra.annotation.AfterLRA;
 import org.eclipse.microprofile.lra.annotation.Compensate;
 import org.eclipse.microprofile.lra.annotation.Complete;
@@ -77,6 +78,7 @@ public class LRAParticipantResource {
     public Response complete(@PathParam("participantId") String participantId,
                              @HeaderParam(LRA_HTTP_CONTEXT_HEADER) String lraId,
                              @HeaderParam(LRA_HTTP_PARENT_CONTEXT_HEADER) String parentId) {
+        LRALogger.logger.error("QQQQQQQQQQQQQQQQQQQ complete for " + lraId);
         return getParticipant(participantId).complete(createURI(lraId), createURI(parentId));
     }
 

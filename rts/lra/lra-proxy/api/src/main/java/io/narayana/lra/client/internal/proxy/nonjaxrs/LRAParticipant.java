@@ -73,13 +73,27 @@ public class LRAParticipant {
 
     private Map<URI, ParticipantResult> participantStatusMap = new HashMap<>();
 
+    @Override
+    public String toString() {
+        return "LRAParticipant{" +
+            "javaClass=" + javaClass +
+            ", compensateMethod=" + compensateMethod +
+            ", completeMethod=" + completeMethod +
+            ", statusMethod=" + statusMethod +
+            ", forgetMethod=" + forgetMethod +
+            ", afterLRAMethod=" + afterLRAMethod +
+            ", instance=" + instance +
+            ", participantStatusMap=" + participantStatusMap +
+            '}';
+    }
+
     LRAParticipant(Class<?> javaClass) {
         this.javaClass = javaClass;
 
         Arrays.stream(javaClass.getMethods()).forEach(this::processParticipantMethod);
     }
 
-    Class<?> getJavaClass() {
+    public Class<?> getJavaClass() {
         return javaClass;
     }
 

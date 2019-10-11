@@ -23,9 +23,7 @@ package io.narayana.lra.client.internal.proxy.nonjaxrs;
 
 import io.narayana.lra.client.internal.proxy.nonjaxrs.jandex.DotNames;
 import io.narayana.lra.client.internal.proxy.nonjaxrs.jandex.JandexAnnotationResolver;
-import io.narayana.lra.logging.LRALogger;
 import org.jboss.jandex.AnnotationInstance;
-import org.jboss.jandex.AnnotationTarget;
 import org.jboss.jandex.ClassInfo;
 import org.jboss.jandex.DotName;
 import org.jboss.jandex.Index;
@@ -34,7 +32,6 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
 import javax.enterprise.inject.Any;
 import javax.enterprise.inject.spi.AfterBeanDiscovery;
-import javax.enterprise.inject.spi.Bean;
 import javax.enterprise.inject.spi.BeanManager;
 import javax.enterprise.inject.spi.Extension;
 import javax.enterprise.util.AnnotationLiteral;
@@ -44,6 +41,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * This CDI extension collects all LRA participants that contain
@@ -54,39 +52,14 @@ public class LRACDIExtension implements Extension {
 
     private ClassPathIndexer classPathIndexer = new ClassPathIndexer();
     private Index index;
-    private final Map<String, LRAParticipant> participants = new HashMap<>();
+    private Map<String, LRAParticipant> participants = new HashMap<>();
 
     public void observe(@Observes AfterBeanDiscovery event, BeanManager beanManager) throws IOException, ClassNotFoundException {
         index = classPathIndexer.createIndex();
 
-        List<AnnotationInstance> annotations = index.getAnnotations(DotName.createSimple("javax.ws.rs.Path"));
-
-        for (AnnotationInstance annotation : annotations) {
-            ClassInfo classInfo;
-            AnnotationTarget target = annotation.target();
-
-            if (target.kind().equals(AnnotationTarget.Kind.CLASS)) {
-                classInfo = target.asClass();
-            } else if (target.kind().equals(AnnotationTarget.Kind.METHOD)) {
-                classInfo = target.asMethod().declaringClass();
-            } else {
-                continue;
-            }
-
-            LRAParticipant participant = getAsParticipant(classInfo);
-            if (participant != null) {
-                participants.put(participant.getJavaClass().getName(), participant);
-                Set<Bean<?>> participantBeans = beanManager.getBeans(participant.getJavaClass(), new AnnotationLiteral<Any>() {});
-                if (participantBeans.isEmpty()) {
-                    // resource is not registered as managed bean so register a custom managed instance
-                    try {
-                        participant.setInstance(participant.getJavaClass().newInstance());
-                    } catch (InstantiationException | IllegalAccessException e) {
-                        LRALogger.i18NLogger.error_cannotProcessParticipant(e);
-                    }
-                }
-            }
-        }
+        Set<String> beanNames = beanManager.getBeans(Object.class, new AnnotationLiteral<Any>() {
+        }).stream().map(b -> b.getBeanClass().getName()).collect(Collectors.toSet());
+        participants = new LRAParticipantProcessor().process(index, beanNames);
 
         event.addBean()
             .read(beanManager.createAnnotatedType(LRAParticipantRegistry.class))
