@@ -294,9 +294,9 @@ public class LRAService {
             timeLimit = 0;
         }
 
-        if (!transaction.isActive()) {
-            return Response.Status.PRECONDITION_FAILED.getStatusCode();
-        }
+//        if (!transaction.isActive()) {
+//            return Response.Status.PRECONDITION_FAILED.getStatusCode();
+//        }
 
         LRARecord participant;
 

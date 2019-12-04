@@ -377,6 +377,12 @@ public class Transaction extends AtomicAction {
         }
     }
 
+    private void updateAfterLRAListeners(RecordList... lists) {
+        for (RecordList list : lists) {
+            updateAfterLRAListeners(list);
+        }
+    }
+
     private void updateAfterLRAListeners(RecordList list) {
         if (list == null || list.size() == 0) {
             return;
@@ -566,6 +572,12 @@ public class Transaction extends AtomicAction {
             if (timeLimit > 0) {
                 setTimeLimit(timeLimit);
             }
+
+            return p;
+        } else if (isRecovering() && p.getCompensator() == null && p.getEndNotificationUri() != null) {
+            // it's an AfterLRA listener
+            afterLRAListeners.add(new AfterLRAListener(p.getEndNotificationUri(), p.getRecoveryCoordinatorURI()));
+            updateState();
 
             return p;
         }
