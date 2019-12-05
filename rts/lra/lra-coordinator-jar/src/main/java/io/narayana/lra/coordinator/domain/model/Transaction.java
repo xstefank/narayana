@@ -420,28 +420,35 @@ public class Transaction extends AtomicAction {
         savePendingList();
 
         if ((res != ActionStatus.RUNNING) && (res != ActionStatus.ABORT_ONLY)) {
-            if (nested && cancel) {
-                /*
-                 * Note that we do not hook into ActionType.NESTED because that would mean that after a
-                 * nested txn is committed its participants are merged
-                 * with the parent and they can then only be aborted if the parent aborts whereas in
-                 * the LRA model nested LRAs can be cancelled whilst the enclosing LRA is closed
-                 */
+            if (nested) {
+                if (cancel) {
+                    /*
+                     * Note that we do not hook into ActionType.NESTED because that would mean that after a
+                     * nested txn is committed its participants are merged
+                     * with the parent and they can then only be aborted if the parent aborts whereas in
+                     * the LRA model nested LRAs can be cancelled whilst the enclosing LRA is closed
+                     */
 
-                // repopulate the pending list TODO it won't neccessarily be present during recovery
-                pendingList = new RecordList();
+                    // repopulate the pending list TODO it won't neccessarily be present during recovery
+                    pendingList = new RecordList();
 
-                pending.forEach(r -> pendingList.putRear(r));
+                    pending.forEach(r -> pendingList.putRear(r));
 
-                updateAfterLRAListeners(pendingList);
-                updateState(LRAStatus.Cancelling);
+                    updateAfterLRAListeners(pendingList);
+                    updateState(LRAStatus.Cancelling);
 
-                super.phase2Abort(true);
-//                res = super.Abort();
+                    super.phase2Abort(true);
+//                  res = super.Abort();
 
-                res = status();
+                    res = status();
 
-                status = toLRAStatus(status());
+                    status = toLRAStatus(status());
+                } else {
+                    // parent LRA completed so we need to call Forget on nested LRA participants
+                    pending.forEach(r -> {
+                        System.out.println(r.getForgetUri());
+                    });
+                }
             }
         } else {
             if (cancel || status() == ActionStatus.ABORT_ONLY) {

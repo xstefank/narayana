@@ -838,6 +838,10 @@ public class LRARecord extends AbstractRecord implements Comparable<AbstractReco
         return compensateURI.toASCIIString();
     }
 
+    public String getForgetUri() {
+        return forgetURI != null ? forgetURI.toASCIIString() : null;
+    }
+
     void setLRAService(LRAService lraService) {
         this.lraService = lraService;
     }

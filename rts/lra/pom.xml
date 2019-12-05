@@ -26,8 +26,8 @@
         <version.junit>4.12</version.junit>
 
         <version.arquillian>1.2.1.Final</version.arquillian> <!-- cannot use the up-to-date Arquillian https://issues.jboss.org/browse/THORN-2090 -->
-      <version.microprofile.lra.api>1.0-20191129.071308-603</version.microprofile.lra.api>
-      <version.microprofile.lra.tck>1.0-20191129.071320-603</version.microprofile.lra.tck>
+        <version.microprofile.lra.api>1.0-SNAPSHOT</version.microprofile.lra.api>
+        <version.microprofile.lra.tck>1.0-SNAPSHOT</version.microprofile.lra.tck>
 
         <version.org.jboss.weld.se>3.1.1.Final</version.org.jboss.weld.se>
         <version.org.jboss.shrinkwrap>1.2.6</version.org.jboss.shrinkwrap>
@@ -38,21 +38,21 @@
         <skipITs>true</skipITs> <!-- integration tests are disabled by default, use profile to run 'arq' -->
     </properties>
 
-    <repositories>
-        <repository>
-            <id>jboss-public-releases-repository-group</id>
-            <name>JBoss Public Releases Maven Repository Group</name>
-            <url>https://repository.jboss.org/nexus/content/repositories/releases</url>
-        </repository>
-        <repository>
-            <id>repo.eclipse.org-snapshots</id>
-            <name>Eclipse MicroProfile Repository - Snapshots</name>
-            <url>https://repo.eclipse.org/content/repositories/microprofile-snapshots</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>jboss-public-releases-repository-group</id>-->
+<!--            <name>JBoss Public Releases Maven Repository Group</name>-->
+<!--            <url>https://repository.jboss.org/nexus/content/repositories/releases</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>repo.eclipse.org-snapshots</id>-->
+<!--            <name>Eclipse MicroProfile Repository - Snapshots</name>-->
+<!--            <url>https://repo.eclipse.org/content/repositories/microprofile-snapshots</url>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
+<!--    </repositories>-->
 
     <dependencyManagement>
         <dependencies>
