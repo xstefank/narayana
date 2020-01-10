@@ -36,6 +36,7 @@ import io.narayana.lra.ResponseHolder;
 import io.narayana.lra.logging.LRALogger;
 import org.eclipse.microprofile.lra.annotation.LRAStatus;
 import org.eclipse.microprofile.lra.annotation.ParticipantStatus;
+import org.eclipse.microprofile.lra.annotation.ws.rs.LRA;
 
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.client.AsyncInvoker;
@@ -252,6 +253,11 @@ public class LRARecord extends AbstractRecord implements Comparable<AbstractReco
     }
 
     private int tryDoEnd(boolean compensate) {
+        if ((isCompelete() || isCompensated() || status == null) && afterURI != null) {
+            // replay only the afterLRA call
+            return invokeAfterLRA();
+        }
+
         URI endPath;
 
         if (ParticipantStatus.Compensating.equals(status)) {
@@ -711,6 +717,27 @@ public class LRARecord extends AbstractRecord implements Comparable<AbstractReco
 
     public int typeIs() {
         return getTypeId();
+    }
+
+    private int invokeAfterLRA() {
+        ResponseHolder response = null;
+
+        try {
+            response = new RequestBuilder(afterURI)
+                .request()
+                .header(LRA.LRA_HTTP_ENDED_CONTEXT_HEADER, lraId)
+                .header(LRA.LRA_HTTP_RECOVERY_HEADER, recoveryURI.toASCIIString())
+                .async(PARTICIPANT_TIMEOUT, TimeUnit.SECONDS)
+                .put(lraService.getLRA(lraId).getStatus(), MediaType.TEXT_PLAIN);
+
+            return response.getStatus() == 200 ? TwoPhaseOutcome.FINISH_OK : TwoPhaseOutcome.HEURISTIC_HAZARD;
+        } catch (WebApplicationException e) {
+            if (LRALogger.logger.isInfoEnabled()) {
+                LRALogger.logger.infof("Could not notify AfterLRA listener at %s (%s)", afterURI, e.getMessage());
+            }
+
+            return TwoPhaseOutcome.HEURISTIC_HAZARD;
+        }
     }
 
     public int nestedAbort() {

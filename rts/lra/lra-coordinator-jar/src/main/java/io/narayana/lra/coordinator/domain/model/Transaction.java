@@ -30,8 +30,6 @@ import com.arjuna.ats.arjuna.coordinator.BasicAction;
 import com.arjuna.ats.arjuna.coordinator.RecordList;
 import com.arjuna.ats.arjuna.coordinator.RecordListIterator;
 import com.arjuna.ats.arjuna.coordinator.RecordType;
-import io.narayana.lra.RequestBuilder;
-import io.narayana.lra.ResponseHolder;
 import io.narayana.lra.logging.LRALogger;
 import com.arjuna.ats.arjuna.state.InputObjectState;
 import com.arjuna.ats.arjuna.state.OutputObjectState;
@@ -39,10 +37,8 @@ import com.arjuna.ats.internal.arjuna.thread.ThreadActionData;
 
 import io.narayana.lra.coordinator.domain.service.LRAService;
 import org.eclipse.microprofile.lra.annotation.LRAStatus;
-import org.eclipse.microprofile.lra.annotation.ws.rs.LRA;
 
 import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
@@ -56,7 +52,6 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -66,8 +61,6 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static io.narayana.lra.LRAHttpClient.PARTICIPANT_TIMEOUT;
-
 public class Transaction extends AtomicAction {
     private static final String LRA_TYPE = "/StateManager/BasicAction/TwoPhaseCoordinator/LRA";
     private final ScheduledExecutorService scheduler;
@@ -75,7 +68,7 @@ public class Transaction extends AtomicAction {
     private URI parentId;
     private String clientId;
     private List<LRARecord> pending;
-    private List<AfterLRAListener> afterLRAListeners;
+    private RecordList afterLRAListeners;
     private LRAStatus status;
     private String responseData;
     private LocalDateTime startTime;
@@ -159,15 +152,20 @@ public class Transaction extends AtomicAction {
                 os.packString(status.name());
             }
 
-            if (afterLRAListeners == null) {
-                os.packInt(0);
-            } else {
-                os.packInt(afterLRAListeners.size());
-                for (AfterLRAListener participant : afterLRAListeners) {
-                    os.packString(participant.notificationURI.toASCIIString());
-                    os.packString(participant.recoveryId.toASCIIString());
-                }
-            }
+//            if (afterLRAListeners == null) {
+//                os.packInt(0);
+//            } else {
+//                os.packInt(afterLRAListeners.size());
+//                for (LRARecord participant : afterLRAListeners) {
+//                    participant.save_state(os, ot);
+//                }
+//            }
+//            if (afterLRAListeners == null || afterLRAListeners.size() == 0) {
+//                os.packBoolean(false);
+//            } else {
+//                os.packBoolean(true);
+                save_list(os, ot, afterLRAListeners);
+//            }
         } catch (IOException e) {
             return false;
         }
@@ -264,14 +262,21 @@ public class Transaction extends AtomicAction {
 
             int cnt = os.unpackInt();
 
-            if (cnt == 0) {
-                afterLRAListeners = null;
-            } else {
-                afterLRAListeners = new ArrayList<>();
-                for (int i = 0; i < cnt; i++) {
-                    afterLRAListeners.add(new AfterLRAListener(new URI(os.unpackString()), new URI(os.unpackString())));
-                }
-            }
+//            if (cnt == 0) {
+//                afterLRAListeners = null;
+//            } else {
+//                afterLRAListeners = new ArrayList<>();
+//                for (int i = 0; i < cnt; i++) {
+//                    afterLRAListeners.add(new AfterLRAListener(new URI(os.unpackString()), new URI(os.unpackString())));
+//                }
+//            }
+//            afterLRAListeners = new RecordList();
+
+//            if (os.unpackBoolean()) {
+//                restore_list(os, ot, afterLRAListeners);
+//            } else {
+                afterLRAListeners = new RecordList();
+//            }
 
             /*
              * If the time limit has already been reached then the difference between now and the scheduled
@@ -415,9 +420,11 @@ public class Transaction extends AtomicAction {
         }
 
         if (afterLRAListeners == null) {
-            afterLRAListeners = new ArrayList<>();
+            afterLRAListeners = new RecordList();
         } else {
-            afterLRAListeners.clear();
+            while (afterLRAListeners.size() > 0) {
+                afterLRAListeners.remove(afterLRAListeners.getFront());
+            }
         }
 
         RecordListIterator i = new RecordListIterator(list);
@@ -425,11 +432,12 @@ public class Transaction extends AtomicAction {
 
         while ((r = i.iterate()) != null) {
             if (r instanceof LRARecord) {
-                URI endNotification = ((LRARecord) r).getEndNotificationUri();
-                URI recoveryURI = ((LRARecord) r).getRecoveryURI();
+                LRARecord lraRecord = (LRARecord) r;
+                URI endNotification = lraRecord.getEndNotificationUri();
+                URI recoveryURI = lraRecord.getRecoveryURI();
 
                 if (endNotification != null && recoveryURI != null) {
-                    afterLRAListeners.add(new AfterLRAListener(endNotification, recoveryURI));
+                    afterLRAListeners.putRear(lraRecord);
                 }
             }
         }
@@ -449,6 +457,7 @@ public class Transaction extends AtomicAction {
         // nested compensators need to be remembered in case the enclosing LRA decides to cancel
         // also save the list so that we can retrieve any response data after committing compensators
         // if (nested)
+        savePendingList();
         savePendingList();
 
         if ((res != ActionStatus.RUNNING) && (res != ActionStatus.ABORT_ONLY)) {
@@ -503,6 +512,10 @@ public class Transaction extends AtomicAction {
             }
         }
 
+        if (heuristicList == null) {
+            heuristicList = new RecordList();
+        }
+
         updateState();
 
         if (pending != null && pending.size() != 0) {
@@ -519,9 +532,9 @@ public class Transaction extends AtomicAction {
             status = toLRAStatus(res);
         }
 
-        if (!isRecovering()) {
+        if (!afterLRANotification(cancel) && !isRecovering()) {
             if (lraService != null) {
-                lraService.finished(this, false);
+//                lraService.finished(this, false);
             }
         }
 
@@ -904,43 +917,27 @@ public class Transaction extends AtomicAction {
         return parentId;
     }
 
-    public boolean afterLRANotification() {
-        boolean notifiedAll = true;
+    public boolean afterLRANotification(boolean cancel) {
+        preparedList = new RecordList();
 
         if (afterLRAListeners != null) {
-            try {
-                Iterator<AfterLRAListener> listeners = afterLRAListeners.iterator();
+            AbstractRecord current = afterLRAListeners.getFront();
 
-                while (listeners.hasNext()) {
-                    AfterLRAListener participant = listeners.next();
-                    ResponseHolder response = null;
-
-                    try {
-                        response = new RequestBuilder(participant.notificationURI)
-                                .request()
-                                .header(LRA.LRA_HTTP_ENDED_CONTEXT_HEADER, id)
-                                .header(LRA.LRA_HTTP_RECOVERY_HEADER, participant.recoveryId.toASCIIString())
-                                .async(PARTICIPANT_TIMEOUT, TimeUnit.SECONDS)
-                                .put(status.name(), MediaType.TEXT_PLAIN);
-
-                        if (response.getStatus() == 200) {
-                            listeners.remove();
-                        } else {
-                            notifiedAll = false;
-                        }
-                    } catch (WebApplicationException e) {
-                        notifiedAll = false;
-
-                        if (LRALogger.logger.isInfoEnabled()) {
-                            LRALogger.logger.infof("Could not notify AfterLRA listener at %s (%s)", participant.notificationURI, e.getMessage());
-                        }
-                    }
-                }
-            } finally {
+            while (current != null) {
+                preparedList.insert(current);
+                afterLRAListeners.remove(current);
+                current = afterLRAListeners.getFront();
             }
         }
 
-        return notifiedAll;
+        if (preparedList.size() > 0) {
+            // reinvoke finished participants which will trigger AfterLRA calls
+            status = cancel ? LRAStatus.Cancelling : LRAStatus.Closing;
+            super.phase2Commit(true);
+            return true;
+        }
+
+        return false;
     }
 
     public String getUid() {
