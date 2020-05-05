@@ -432,7 +432,7 @@ public class LRARecord extends AbstractRecord implements Comparable<AbstractReco
     }
 
     private int atEnd(int res) {
-        if (parentId != null
+        if (parentId != null && !lraService.getTransaction(parentId).isRecovering()
                 && (status == ParticipantStatus.Completed || status == ParticipantStatus.FailedToComplete)) {
             // completed nested participants must remain compensatable
             return TwoPhaseOutcome.HEURISTIC_HAZARD; // ask to be called again
@@ -453,10 +453,10 @@ public class LRARecord extends AbstractRecord implements Comparable<AbstractReco
             afterURI = null;
 
             // the post LRA actions succeeded so remove the participant from the intentions list otherwise retry
-            return TwoPhaseOutcome.FINISH_OK;
+            return res;
         }
 
-        return TwoPhaseOutcome.HEURISTIC_HAZARD;
+        return res;
     }
 
     private void updateStatus(boolean compensate) {
@@ -474,6 +474,7 @@ public class LRARecord extends AbstractRecord implements Comparable<AbstractReco
                 endPath.toASCIIString(), compensate ? COMPENSATE_REL : COMPLETE_REL, failureReason);
 
         // permanently failed so ask recovery to ignore us in the future.
+        lra.setLRAStatus(compensate ? LRAStatus.FailedToCancel : LRAStatus.FailedToClose);
         return TwoPhaseOutcome.FINISH_ERROR;
     }
 

@@ -52,6 +52,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -361,6 +362,10 @@ public class Transaction extends AtomicAction {
         status = toLRAStatus(actionStatus);
     }
 
+    protected void setLRAStatus(LRAStatus status) {
+        this.status = status;
+    }
+
     boolean isClosed() {
         return status != null && status.equals(LRAStatus.Closed);
     }
@@ -386,7 +391,7 @@ public class Transaction extends AtomicAction {
         }
     }
 
-    boolean isFinished() {
+    public boolean isFinished() {
         switch (status) {
             case Closed:
                 /* FALLTHRU */
@@ -394,6 +399,16 @@ public class Transaction extends AtomicAction {
                 /* FALLTHRU */
             case FailedToClose:
                 /* FALLTHRU */
+            case FailedToCancel:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    public boolean isFailed() {
+        switch (status) {
+            case FailedToClose:
             case FailedToCancel:
                 return true;
             default:
@@ -435,8 +450,8 @@ public class Transaction extends AtomicAction {
             }
         }
     }
-
     // in this version close need to run as blocking code {@link Vertx().executeBlocking}
+
     private int doEnd(boolean cancel) {
         inFlight = false;
         int res = status();
@@ -480,7 +495,13 @@ public class Transaction extends AtomicAction {
                     status = toLRAStatus(status());
                 } else {
                     // forget calls for nested participants
-                    forgetAllParticipants();
+                    if (forgetAllParticipants()) {
+                        updateState(LRAStatus.Closed);
+                        return ActionStatus.COMMITTED;
+                    } else {
+                        // some forget calls have not been received, we need to repeat them at nest recovery pass
+                        return ActionStatus.H_HAZARD;
+                    }
                 }
             }
         } else {
@@ -525,8 +546,6 @@ public class Transaction extends AtomicAction {
             status = cancel ? LRAStatus.FailedToCancel : LRAStatus.FailedToClose;
         } else if (getSize(pendingList) != 0 || getSize(preparedList) != 0) {
             status = LRAStatus.Closing;
-        } else {
-            status = toLRAStatus(res);
         }
 
         if (!isRecovering()) {
@@ -692,10 +711,21 @@ public class Transaction extends AtomicAction {
         return findLRAParticipant(participantUrl, true) != null;
     }
 
-    public void forgetAllParticipants() {
-        if (pending != null) {
-            pending.forEach(LRARecord::forget);
+    public boolean forgetAllParticipants() {
+        boolean result = true;
+
+        Iterator<LRARecord> iterator = pending.iterator();
+        while (iterator.hasNext()) {
+            LRARecord record = iterator.next();
+
+            if (record.forget()) {
+                iterator.remove();
+            } else {
+                result = false;
+            }
         }
+
+        return result;
     }
 
     private void savePendingList() {

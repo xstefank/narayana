@@ -93,6 +93,12 @@ public class LRARecoveryModule implements RecoveryModule {
 
         try {
             RecoveringLRA lra = new RecoveringLRA(lraService, recoverUid, theStatus);
+
+            if (lra.isFinished()) {
+                // failed LRAs are preserved in the log until explicitly removed but they can't be recovered anymore
+                return;
+            }
+
             String Status = ActionStatus.stringForm(theStatus);
             boolean inFlight = lra.isActive();
 
