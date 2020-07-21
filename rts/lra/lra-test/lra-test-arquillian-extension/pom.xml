@@ -51,6 +51,12 @@
       <version>${version.org.jboss.weld.se}</version>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+      <groupId>org.jboss.narayana.rts</groupId>
+      <artifactId>lra-coordinator-jar</artifactId>
+      <version>5.10.5.Final-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
   </dependencies>
   
 

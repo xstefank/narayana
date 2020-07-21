@@ -64,6 +64,9 @@ public class ConfigAuxiliaryArchiveAppender implements AuxiliaryArchiveAppender 
         archive.addPackage(NarayanaLRARecovery.class.getPackage());
         archive.addAsResource(new StringAsset("io.narayana.lra.arquillian.spi.NarayanaLRARecovery"),
             "META-INF/services/org.eclipse.microprofile.lra.tck.service.spi.LRARecoveryService");
+        archive.addAsResource(new StringAsset("io.narayana.lra.arquillian.spi.NarayanaLRAManagementService"),
+            "META-INF/services/org.eclipse.microprofile.lra.tck.service.spi.LRAManagementService");
+
 
         return archive;
     }

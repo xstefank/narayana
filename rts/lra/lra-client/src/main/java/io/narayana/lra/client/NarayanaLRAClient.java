@@ -569,6 +569,18 @@ public class NarayanaLRAClient implements Closeable {
         }
     }
 
+    public boolean isFinished(URI lraId) {
+        switch (getStatus(lraId, false)) {
+            case Closed:
+            case Cancelled:
+            case FailedToClose:
+            case FailedToCancel:
+                return true;
+            default:
+                return false;
+        }
+    }
+
     public LRAStatus getStatus(URI uri, boolean effectivelyActive) throws WebApplicationException {
         ResponseHolder response;
         URL lraId;
