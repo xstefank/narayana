@@ -71,6 +71,7 @@ import javax.ws.rs.core.UriInfo;
 
 import io.narayana.lra.Current;
 import io.narayana.lra.LRAConstants;
+import io.narayana.lra.LRAData;
 import io.narayana.lra.RequestBuilder;
 import io.narayana.lra.ResponseHolder;
 import org.eclipse.microprofile.lra.annotation.Compensate;
@@ -82,6 +83,7 @@ import org.eclipse.microprofile.lra.annotation.LRAStatus;
 import org.eclipse.microprofile.lra.annotation.AfterLRA;
 import org.eclipse.microprofile.lra.annotation.ws.rs.Leave;
 import org.eclipse.microprofile.lra.annotation.Status;
+import org.eclipse.microprofile.rest.client.RestClientBuilder;
 
 import static org.eclipse.microprofile.lra.annotation.ws.rs.LRA.LRA_HTTP_CONTEXT_HEADER;
 import static org.eclipse.microprofile.lra.annotation.ws.rs.LRA.LRA_HTTP_RECOVERY_HEADER;
@@ -185,6 +187,8 @@ public class NarayanaLRAClient implements Closeable {
 
     private void setCoordinatorURI(URI uri) {
         base = uri;
+        coordinatorRESTClient = RestClientBuilder.newBuilder()
+            .baseUri(uri).build(LRACoordinatorRESTClient.class);
     }
 
     private void init(String scheme, String host, int port) throws URISyntaxException {
@@ -228,6 +232,12 @@ public class NarayanaLRAClient implements Closeable {
             LRALogger.i18NLogger.error_invalidCoordinatorId(coordinatorUri.toASCIIString(), e);
             throwGenericLRAException(coordinatorUri, BAD_REQUEST.getStatusCode(), e.getMessage());
         }
+    }
+
+    private LRACoordinatorRESTClient coordinatorRESTClient;
+
+    public List<LRAData> getAllLRAs() {
+        return coordinatorRESTClient.getAllLRAs();
     }
 
     /**

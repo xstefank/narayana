@@ -24,6 +24,7 @@ package io.narayana.lra.coordinator.domain.model;
 import java.io.IOException;
 import java.util.Objects;
 
+import io.narayana.lra.LRAData;
 import org.eclipse.microprofile.lra.annotation.LRAStatus;
 
 //@Data

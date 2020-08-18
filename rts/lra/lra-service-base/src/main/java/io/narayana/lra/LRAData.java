@@ -1,30 +1,9 @@
-/*
- * JBoss, Home of Professional Open Source.
- * Copyright 2017, Red Hat, Inc., and individual contributors
- * as indicated by the @author tags. See the copyright.txt file in the
- * distribution for a full listing of individual contributors.
- *
- * This is free software; you can redistribute it and/or modify it
- * under the terms of the GNU Lesser General Public License as
- * published by the Free Software Foundation; either version 2.1 of
- * the License, or (at your option) any later version.
- *
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this software; if not, write to the Free
- * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
- * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
- */
-package io.narayana.lra.client;
+package io.narayana.lra;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
-public class NarayanaLRAInfo {
+public class LRAData {
     private String lraId;
     private String clientId;
     private String status;
@@ -36,10 +15,12 @@ public class NarayanaLRAInfo {
     private long startTime;
     private long finishTime;
 
-    public NarayanaLRAInfo(String lraId, String clientId, String status,
-                boolean isClosed, boolean isCancelled, boolean isRecovering,
-                boolean isActive, boolean isTopLevel,
-                long startTime, long finishTime) {
+    public LRAData() {}
+
+    public LRAData(String lraId, String clientId, String status,
+                           boolean isClosed, boolean isCancelled, boolean isRecovering,
+                           boolean isActive, boolean isTopLevel,
+                           long startTime, long finishTime) {
         this.lraId = lraId;
         this.clientId = clientId;
         this.status = status;
@@ -56,59 +37,90 @@ public class NarayanaLRAInfo {
         return this.lraId;
     }
 
+    public void setLraId(String lraId) {
+        this.lraId = lraId;
+    }
+
     public String getClientId() {
         return this.clientId;
+    }
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
     }
 
     public String getStatus() {
         return this.status;
     }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public boolean isClosed() {
         return this.isClosed;
+    }
+
+    public void setClosed(boolean closed) {
+        isClosed = closed;
     }
 
     public boolean isCancelled() {
         return this.isCancelled;
     }
 
+    public void setCancelled(boolean cancelled) {
+        isCancelled = cancelled;
+    }
+
     public boolean isRecovering() {
         return this.isRecovering;
+    }
+
+    public void setRecovering(boolean recovering) {
+        isRecovering = recovering;
     }
 
     public boolean isActive() {
         return this.isActive;
     }
 
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
     public boolean isTopLevel() {
         return this.isTopLevel;
     }
 
+    public void setTopLevel(boolean topLevel) {
+        isTopLevel = topLevel;
+    }
 
     public long getStartTime() {
         return startTime;
+    }
+
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
     }
 
     public long getFinishTime() {
         return finishTime;
     }
 
-    public long getTimeNow() {
-        return LocalDateTime.now().atZone(ZoneOffset.UTC).toInstant().toEpochMilli();
-    }
-
-    public ZoneOffset getZoneOffset() {
-        return ZoneOffset.UTC;
+    public void setFinishTime(long finishTime) {
+        this.finishTime = finishTime;
     }
 
     public boolean equals(Object o) {
         if (this == o) {
             return true;
-        } else if (!(o instanceof NarayanaLRAInfo)) {
+        } else if (!(o instanceof LRAData)) {
             return false;
         } else {
-            NarayanaLRAInfo lraStatus = (NarayanaLRAInfo)o;
-            return this.getLraId().equals(lraStatus.getLraId());
+            LRAData lraData = (LRAData) o;
+            return this.getLraId().equals(lraData.getLraId());
         }
     }
 
@@ -131,4 +143,5 @@ public class NarayanaLRAInfo {
                 ", finishTime=" + finishTime +
                 '}';
     }
+
 }

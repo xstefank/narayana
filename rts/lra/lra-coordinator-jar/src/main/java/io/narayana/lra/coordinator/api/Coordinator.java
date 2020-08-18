@@ -25,7 +25,7 @@ package io.narayana.lra.coordinator.api;
 import io.narayana.lra.Current;
 import io.narayana.lra.RequestBuilder;
 import io.narayana.lra.ResponseHolder;
-import io.narayana.lra.coordinator.domain.model.LRAData;
+import io.narayana.lra.LRAData;
 import io.narayana.lra.coordinator.domain.model.LRAStatusHolder;
 import io.narayana.lra.coordinator.domain.model.Transaction;
 import io.narayana.lra.coordinator.domain.service.LRAService;

@@ -57,6 +57,11 @@
             <version>2.5</version>
             <scope>provided</scope>
         </dependency>
+      <dependency>
+        <groupId>org.eclipse.microprofile.rest.client</groupId>
+        <artifactId>microprofile-rest-client-api</artifactId>
+        <version>1.4.1</version>
+      </dependency>
     </dependencies>
 
     <profiles>

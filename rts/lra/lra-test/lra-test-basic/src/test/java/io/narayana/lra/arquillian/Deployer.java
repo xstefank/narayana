@@ -23,6 +23,7 @@
 package io.narayana.lra.arquillian;
 
 import org.eclipse.microprofile.lra.tck.service.LRAMetricService;
+import org.eclipse.microprofile.rest.client.RestClientBuilder;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 
@@ -31,6 +32,7 @@ public class Deployer {
     public static WebArchive deploy(String appName) {
         return ShrinkWrap.create(WebArchive.class, appName + ".war")
                 .addPackages(true,
+                    RestClientBuilder.class.getPackage(),
                     LRAMetricService.class.getPackage(),
                     org.codehaus.jettison.JSONSequenceTooLargeException.class.getPackage());
     }
