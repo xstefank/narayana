@@ -57,6 +57,11 @@
             <version>2.5</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+          <groupId>org.jboss.resteasy</groupId>
+          <artifactId>resteasy-client-microprofile</artifactId>
+          <version>${version.org.jboss.resteasy}</version>
+        </dependency>
     </dependencies>
 
     <profiles>
