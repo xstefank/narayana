@@ -23,9 +23,7 @@
 package io.narayana.lra.coordinator.api;
 
 import io.narayana.lra.Current;
-import io.narayana.lra.RequestBuilder;
-import io.narayana.lra.ResponseHolder;
-import io.narayana.lra.coordinator.domain.model.LRAData;
+import io.narayana.lra.LRAData;
 import io.narayana.lra.coordinator.domain.model.Transaction;
 import io.narayana.lra.coordinator.domain.service.LRAService;
 import io.narayana.lra.logging.LRALogger;
@@ -59,7 +57,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 import org.eclipse.microprofile.lra.annotation.LRAStatus;
 import org.eclipse.microprofile.lra.annotation.ParticipantStatus;
@@ -83,7 +80,6 @@ import static io.narayana.lra.LRAConstants.RECOVERY_COORDINATOR_PATH_NAME;
 import static io.narayana.lra.LRAConstants.STATUS;
 import static io.narayana.lra.LRAConstants.STATUS_PARAM_NAME;
 import static io.narayana.lra.LRAConstants.TIMELIMIT_PARAM_NAME;
-import static io.narayana.lra.LRAHttpClient.PARTICIPANT_TIMEOUT;
 import static javax.ws.rs.core.Response.Status.BAD_REQUEST;
 import static javax.ws.rs.core.Response.Status.INTERNAL_SERVER_ERROR;
 import static javax.ws.rs.core.Response.Status.PRECONDITION_FAILED;
@@ -238,13 +234,8 @@ public class Coordinator {
                     return Response.status(response.getStatus()).build();
                 }
             } else {
-                ResponseHolder resp = new RequestBuilder(parentLRAUrl)
-                        .request()
-                        .async(PARTICIPANT_TIMEOUT, TimeUnit.SECONDS)
-                        .put(compensatorUrl, MediaType.TEXT_PLAIN);
-                if (resp.getStatus() != Response.Status.OK.getStatusCode()) {
-                    return Response.status(resp.getStatus()).build(); // TODO include reason
-                }
+                LRALogger.i18NLogger.error_parentLRANotFound(parentLRAUrl);
+                return Response.status(PRECONDITION_FAILED).build();
             }
         }
 

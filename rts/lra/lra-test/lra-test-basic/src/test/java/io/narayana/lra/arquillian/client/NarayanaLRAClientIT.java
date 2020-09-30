@@ -20,23 +20,40 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
 
-package io.narayana.lra.arquillian;
+package io.narayana.lra.arquillian.client;
 
-import org.eclipse.microprofile.lra.tck.LRAClientOps;
-import org.eclipse.microprofile.lra.tck.participant.api.WrongHeaderException;
-import org.eclipse.microprofile.lra.tck.service.LRAMetricService;
-import org.eclipse.microprofile.rest.client.RestClientBuilder;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
+import io.narayana.lra.LRAData;
+import io.narayana.lra.arquillian.Deployer;
+import io.narayana.lra.client.NarayanaLRAClient;
+import org.jboss.arquillian.container.test.api.Deployment;
+import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
-public class Deployer {
+import javax.inject.Inject;
+import java.net.URI;
+import java.util.List;
 
-    public static WebArchive deploy(String appName) {
-        return ShrinkWrap.create(WebArchive.class, appName + ".war")
-                .addPackages(true,
-                    RestClientBuilder.class.getPackage(),
-                    LRAMetricService.class.getPackage(),
-                    org.codehaus.jettison.JSONSequenceTooLargeException.class.getPackage())
-                .addClasses(LRAClientOps.class, WrongHeaderException.class);
+@RunWith(Arquillian.class)
+public class NarayanaLRAClientIT {
+
+    @Inject
+    private NarayanaLRAClient lraClient;
+
+    @Deployment
+    public static WebArchive deploy() {
+        return Deployer.deploy(NarayanaLRAClientIT.class.getSimpleName());
     }
+
+    @Test
+    public void testGetAllLRAs() {
+        URI lra = lraClient.startLRA("test-lra");
+
+        List<LRAData> allLRAs = lraClient.getAllLRAs();
+
+        Assert.assertTrue(allLRAs.stream().anyMatch(lraData -> lraData.getLraId().equals(lra.toASCIIString())));
+    }
+
 }

@@ -210,6 +210,10 @@ public interface lraI18NLogger {
     @Message(id = 25041, value = "Invalid format of coordinator url, was '%s'")
     void error_invalidCoordinatorId(String coordinatorUri, @Cause Throwable t);
 
+    @LogMessage(level = ERROR)
+    @Message(id = 25042, value = "The parent LRA '%s' was not found")
+    void error_parentLRANotFound(URI parentLraId);
+
     /*
         Allocate new messages directly above this notice.
           - id: use the next id number in numeric sequence. Don't reuse ids.

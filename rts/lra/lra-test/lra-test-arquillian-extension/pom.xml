@@ -12,7 +12,7 @@
   <artifactId>lra-test-arquillian-extension</artifactId>
   <name>LRA tests: Arquillian extension</name>
   <description>Arquillian extensions needed for LRA tests to work</description>
-  
+
   <dependencies>
     <dependency>
       <groupId>org.eclipse.microprofile.lra</groupId>
@@ -51,7 +51,12 @@
       <version>${version.org.jboss.weld.se}</version>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-client-microprofile</artifactId>
+      <version>${version.org.jboss.resteasy}</version>
+    </dependency>
   </dependencies>
-  
+
 
 </project>

@@ -24,7 +24,9 @@ package io.narayana.lra.arquillian;
 
 import io.narayana.lra.arquillian.spi.NarayanaLRARecovery;
 import io.narayana.lra.client.internal.proxy.nonjaxrs.LRACDIExtension;
+import org.eclipse.microprofile.rest.client.RestClientBuilder;
 import org.jboss.arquillian.container.test.spi.client.deployment.AuxiliaryArchiveAppender;
+import org.jboss.resteasy.microprofile.client.BuilderResolver;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.StringAsset;
@@ -46,6 +48,8 @@ public class ConfigAuxiliaryArchiveAppender implements AuxiliaryArchiveAppender 
         archive.addPackages(true, io.narayana.lra.client.NarayanaLRAClient.class.getPackage())
                 .addPackages(true, io.narayana.lra.Current.class.getPackage())
                 .addPackages(true, org.apache.http.HttpEntity.class.getPackage())
+                .addPackages(true, RestClientBuilder.class.getPackage())
+                .addPackages(true, BuilderResolver.class.getPackage())
                 .addPackage(LRACDIExtension.class.getPackage())
                 .addAsResource("META-INF/services/javax.enterprise.inject.spi.Extension")
                 .addClass(org.jboss.weld.exceptions.DefinitionException.class)
@@ -58,7 +62,9 @@ public class ConfigAuxiliaryArchiveAppender implements AuxiliaryArchiveAppender 
         archive.addPackages(true, io.narayana.lra.filter.ClientLRARequestFilter.class.getPackage())
                .addAsResource(new StringAsset(filtersAsset), "META-INF/services/javax.ws.rs.ext.Providers")
                .addAsResource(new StringAsset("org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder"),
-                    "META-INF/services/javax.ws.rs.client.ClientBuilder");
+                    "META-INF/services/javax.ws.rs.client.ClientBuilder")
+               .addAsResource(new StringAsset("org.jboss.resteasy.microprofile.client.BuilderResolver"),
+                   "META-INF/services/org.eclipse.microprofile.rest.client.spi.RestClientBuilderResolver");
 
         // adding TCK required SPI implementations
         archive.addPackage(NarayanaLRARecovery.class.getPackage());
