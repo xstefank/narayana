@@ -1,0 +1,12 @@
+[
+  {
+
+    "name" : "io.narayana.lra.coordinator.domain.model.LRARecord",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "allDeclaredFields" : true,
+    "allPublicFields" : true
+  }
+]

@@ -29,10 +29,10 @@ Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
   <name>Narayana: RESTful transactions</name>
   <description>RESTful transactions</description>
   <url>http://www.jboss.org/jbosstm</url>
- 
+
   <properties>
     <version.thorntail>2.6.0.Final</version.thorntail>
-    <version.quarkus>1.5.0.Final</version.quarkus>
+    <version.quarkus>1.8.1.Final</version.quarkus>
     <version.resteasy-client>${version.org.jboss.resteasy}</version.resteasy-client>
 
     <version.json.api>1.1</version.json.api>
@@ -56,7 +56,7 @@ Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
           <version>${version.thorntail}</version>
           <scope>import</scope>
           <type>pom</type>
-      </dependency> 
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
