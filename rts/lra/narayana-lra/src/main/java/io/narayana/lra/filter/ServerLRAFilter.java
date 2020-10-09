@@ -333,7 +333,7 @@ public class ServerLRAFilter implements ContainerRequestFilter, ContainerRespons
                 } catch (NotFoundException e) {
                     throw e;
                 } catch (WebApplicationException e) {
-                    lraTrace(containerRequestContext, lraId, "ServerLRAFilter before: aborting with " + e.getMessage());
+                    lraTrace(containerRequestContext, lraId, "Dummy change, ServerLRAFilter before: aborting with " + e.getMessage());
                     containerRequestContext.abortWith(e.getResponse());
                     return;
                 } catch (URISyntaxException e) {
