@@ -92,7 +92,7 @@ public interface lraI18NLogger {
 
     @LogMessage(level = ERROR)
     @Message(id = 25011, value = "Cannot access coordinator '%s' when getting status for LRA '%s'")
-    void error_cannotAccesCorrdinatorWhenGettingStatus(URI coordinator, URL lra, @Cause Throwable t);
+    void error_cannotAccessCoordinatorWhenGettingStatus(URI coordinator, URL lra, @Cause Throwable t);
 
     @LogMessage(level = ERROR)
     @Message(id = 25012, value = "LRA coordinator '%s' returned an invalid status code '%s' for LRA '%s'")
@@ -213,6 +213,10 @@ public interface lraI18NLogger {
     @LogMessage(level = ERROR)
     @Message(id = 25042, value = "The parent LRA '%s' was not found")
     void error_parentLRANotFound(URI parentLraId);
+
+    @LogMessage(level = ERROR)
+    @Message(id = 25043, value = "Error getting all LRAs from the coordinator, response status: %d")
+    void error_getAllLRAs(int resposneStatus);
 
     /*
         Allocate new messages directly above this notice.

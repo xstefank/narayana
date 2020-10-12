@@ -1,7 +1,6 @@
 package io.narayana.lra.client;
 
 import io.narayana.lra.LRAData;
-import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
@@ -19,9 +18,10 @@ import static io.narayana.lra.LRAConstants.CLIENT_ID_PARAM_NAME;
 import static io.narayana.lra.LRAConstants.PARENT_LRA_PARAM_NAME;
 import static io.narayana.lra.LRAConstants.TIMELIMIT_PARAM_NAME;
 
-@RegisterRestClient
 @Path("/")
 public interface LRACoordinatorClient {
+
+    String START_PATH = "/start";
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
