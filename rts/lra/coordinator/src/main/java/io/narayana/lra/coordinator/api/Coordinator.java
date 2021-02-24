@@ -521,7 +521,7 @@ public class Coordinator extends Application {
 
     private Response joinLRA(URI lraId, long timeLimit, String compensatorUrl, String linkHeader, String userData)
             throws NotFoundException {
-        final String recoveryUrlBase = String.format("aaaaaaaaaaaaa%s%s/%s",
+        final String recoveryUrlBase = String.format("aaaaaaaaaaaaabbbbbbbbb%s%s/%s",
                 context.getBaseUri().toASCIIString(), COORDINATOR_PATH_NAME, RECOVERY_COORDINATOR_PATH_NAME);
 
         StringBuilder recoveryUrl = new StringBuilder();
