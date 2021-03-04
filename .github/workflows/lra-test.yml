@@ -14,7 +14,7 @@ on:
 
 jobs:
   lra-test:
-    name: LRA test with JDK $ {{ matrix.java-version }}
+    name: LRA test with JDK ${{ matrix.java-version }}
     timeout-minutes: 120
     strategy:
       matrix:
