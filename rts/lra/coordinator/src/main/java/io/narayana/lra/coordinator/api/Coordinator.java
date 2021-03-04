@@ -134,7 +134,7 @@ public class Coordinator extends Application {
             @Parameter(name = STATUS_PARAM_NAME, description = "Filter the returned LRAs to only those in the give state (see CompensatorStatus)")
             @QueryParam(STATUS_PARAM_NAME) @DefaultValue("") String state) {
         LRAStatus requestedLRAStatus = null;
-        System.out.println("DSAFDSF");
+        System.out.println("DSAFDSFasdfasdf");
         if(!state.isEmpty()) {
             requestedLRAStatus = LRAStatus.valueOf(state);
         }
