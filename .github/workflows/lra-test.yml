@@ -2,11 +2,11 @@ name: LRA
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, lra-gh-actions ]
     paths:
       - "rts/lra/**"
   pull_request:
-    branches: [ master ]
+    branches: [ master, lra-gh-actions ]
     paths:
       - "rts/lra/**"
   # Allows you to run this workflow manually from the Actions tab
