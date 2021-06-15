@@ -30,9 +30,9 @@ jobs:
 
       - name: LRA test
         run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
-          WORKSPACE=$PWD PROFILE=LRA ./scripts/hudson/narayana.sh
+          mvn clean install -DskipTests -Denforcer.skip -Dcheckstyle.skip -Dmaven.javadoc.skip
+          cd rts/lra
+          mvn clean install -Parq
         env:
           LRA_TCK_TIMEOUT_FACTOR: 1
 
