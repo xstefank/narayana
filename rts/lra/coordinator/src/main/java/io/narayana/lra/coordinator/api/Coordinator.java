@@ -127,6 +127,7 @@ import static org.eclipse.microprofile.lra.annotation.ws.rs.LRA.LRA_HTTP_RECOVER
 @Tag(name = "LRA Coordinator", description = "Operations to work with active LRAs (to start, to get a status, to finish, etc.)")
 public class Coordinator extends Application {
     static final String LRA_API_VERSION = "1.0-RC1";
+    static final String CHANGE = "1";
 
     @Context
     private UriInfo context;
