@@ -30,9 +30,9 @@ jobs:
 
       - name: LRA test
         run: |
-          mvn clean install -DskipTests -Denforcer.skip -Dcheckstyle.skip -Dmaven.javadoc.skip
+          ./build.sh install -pl ArjunaCore/arjunacore,rts -am -DskipTests -Pcommunity
           cd rts/lra
-          mvn clean install -Parq
+          PRESERVE_WORKING_DIR=true ../../build.sh -fae -B -Pcommunity -Parq
         env:
           LRA_TCK_TIMEOUT_FACTOR: 1
 
