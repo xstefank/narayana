@@ -54,7 +54,7 @@
     <version.jboss-modules>1.10.2.Final</version.jboss-modules>
     <version.microprofile.fault-tolerance>2.1.1</version.microprofile.fault-tolerance>
 
-    <version.microprofile.lra>2.0-SNAPSHOT</version.microprofile.lra>
+    <version.microprofile.lra>2.0-RC1</version.microprofile.lra>
     <version.org.jboss.resteasy>6.0.0.Beta1</version.org.jboss.resteasy>
     <version.org.jboss.servlet.api>1.0.0.Final</version.org.jboss.servlet.api>
     <version.org.jboss.shrinkwrap>1.2.6</version.org.jboss.shrinkwrap>
